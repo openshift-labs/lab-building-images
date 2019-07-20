@@ -1,0 +1,1 @@
+This is a initial demonstration of using `podman` inside of OpenShift. The aim is to turn this into a workshop on building container images, including best practices targeting containers running Python web applications.

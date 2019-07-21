@@ -27,12 +27,12 @@ From within the top level of the Git repository, now run:
 ./.workshop/scripts/deploy-spawner.sh
 ```
 
-The name of the deployment will be ``lab-building-container-images``.
+The name of the deployment will be ``lab-building-images``.
 
 You can determine the hostname for the URL to access the workshop by running:
 
 ```
-oc get route lab-building-container-images
+oc get route lab-building-images
 ```
 
 Building the Workshop

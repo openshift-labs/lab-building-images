@@ -4,5 +4,4 @@ modules:
     activate:
     - workshop-overview
     - setup-environment
-    - exercises/01-proof-of-concept
     - workshop-summary

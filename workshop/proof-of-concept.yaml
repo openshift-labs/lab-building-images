@@ -1,0 +1,5 @@
+name: Running Podman on OpenShift
+
+modules:
+    activate:
+    - proof-of-concept

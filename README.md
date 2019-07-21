@@ -35,12 +35,12 @@ You can determine the hostname for the URL to access the workshop by running:
 oc get route lab-building-container-images
 ```
 
-Editing the Workshop
---------------------
+Building the Workshop
+---------------------
 
-The deployment created above will use a version of the workshop which has been pre-built into an image and which is hosted on ``quay.io``.
+The deployment created above will use an image for an empty workshop.
 
-To make changes to the workshop content and test them, edit the files in the Git repository and then run:
+To deploy this workshop content, or make changes to the workshop content and test them, edit the files in the Git repository and then run:
 
 ```
 ./.workshop/scripts/build-workshop.sh
@@ -50,7 +50,7 @@ This will replace the existing image used by the active deployment.
 
 If you are running an existing instance of the workshop, from your web browser select "Restart Workshop" from the menu top right of the workshop environment dashboard.
 
-When you are happy with your changes, push them back to the remote Git repository. This will automatically trigger a new build of the image hosted on ``quay.io``.
+When you are happy with your changes, push them back to the remote Git repository.
 
 If you need to change the RBAC definitions, or what resources are created when a project is created, change the definitions in the ``templates`` directory. You can then re-run:
 

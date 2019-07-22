@@ -3,9 +3,6 @@ modules:
         name: Proof of Concept
     workshop-overview:
         name: Workshop Overview
-        exit_sign: Setup Environment
-    setup-environment:
-        name: Setup Environment
         exit_sign: Start Workshop
     workshop-summary:
         name: Workshop Summary

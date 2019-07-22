@@ -40,10 +40,10 @@ to exit the container.
 
 Now lets build our own image.
 
-Change to the `image-v1` directory.
+Change to the `poc-v1` directory.
 
 ```execute
-cd image-v1
+cd poc-v1
 ```
 
 Look at what files are in the directory:
@@ -61,7 +61,7 @@ cat Dockerfile
 To build the image run:
 
 ```execute
-podman build -t image-v1 .
+podman build -t poc-v1 .
 ```
 
 Review the list of images:
@@ -73,7 +73,7 @@ podman images
 With the image built, run it:
 
 ```execute
-podman run --rm -it image-v1 sh
+podman run --rm -it poc-v1 sh
 ```
 
 Verify that the file `/tmp/helloworld` exists.
@@ -91,7 +91,7 @@ exit
 Lets tag this image:
 
 ```execute
-podman tag image-v1 docker-registry.default.svc:5000/%project_namespace%/image-v1:latest
+podman tag poc-v1 docker-registry.default.svc:5000/%project_namespace%/poc-v1:latest
 ```
 
 Login to the OpenShift internal registry:
@@ -103,7 +103,7 @@ podman login -u default -p `oc whoami -t` docker-registry.default.svc:5000
 Push the image to the registry:
 
 ```execute
-podman push docker-registry.default.svc:5000/%project_namespace%/image-v1:latest
+podman push docker-registry.default.svc:5000/%project_namespace%/poc-v1:latest
 ```
 
 Verify the image is uploaded:
@@ -115,11 +115,11 @@ oc get is
 Deploy the image from the registry:
 
 ```execute
-oc new-app image-v1:latest
+oc new-app poc-v1:latest
 ```
 
 Watch it being deployed:
 
 ```execute
-oc rollout status dc/image-v1
+oc rollout status dc/poc-v1
 ```

@@ -3,5 +3,4 @@ name: Building Container Images
 modules:
     activate:
     - workshop-overview
-    - setup-environment
     - workshop-summary

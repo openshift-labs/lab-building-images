@@ -1,0 +1,3 @@
+WORKSHOP_NAME=lab-building-images
+SPAWNER_PASSWORD=openshift
+WORKSHOP_MEMORY=2Gi

@@ -2,6 +2,14 @@ FROM quay.io/openshifthomeroom/workshop-dashboard:4.1.0
 
 USER root
 
+RUN yum install -y psmisc podman-docker && \
+    yum -y clean all --enablerepo='*'
+
+RUN sed -i.bak \
+      -e 's/# events_logger = "journald"/events_logger = "file"/' \
+      /etc/containers/libpod.conf && \
+    touch /etc/containers/nodocker
+
 COPY . /tmp/src
 
 RUN rm -rf /tmp/src/.git* && \

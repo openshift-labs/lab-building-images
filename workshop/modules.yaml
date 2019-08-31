@@ -1,9 +1,18 @@
+config:
+    template_engine: liquid.js
+    vars:
+    - name: PROGRAMMING_LANGUAGE
+      value: UNKNOWN
+
+
 modules:
-    proof-of-concept:
-        name: Proof of Concept
     workshop-overview:
         name: Workshop Overview
         exit_sign: Start Workshop
+    container-basics/01-introducing-podman:
+        name: Introducing Podman
+    container-basics/02-starting-a-container:
+        name: Starting a Container
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

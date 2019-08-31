@@ -1,9 +1,11 @@
-Containers are a lightweight form of OS-level virtualization. It enables a set of application processes to be run in their own isolated environment, without the need to run a full operating system.
+Containers are a lightweight form of OS-level virtualisation. They enable a set of application processes to be run in their own isolated environment, without the need to run a full operating system.
 
-In this workshop you will learn how to build container images and run them. The workshop will use `podman` and `buildah`, tools which provide an alternative to `docker`, for building [OCI compliant container images](https://www.opencontainers.org/).
+In this workshop you will learn how to build container images and run them. This will include various best practices around designing and implementing container images so as to ensure they are secure.
 
-![Buildah/Podman](buildah-podman-logo.png)
+{% if PROGRAMMING_LANGUAGE != UNKNOWN %}
 
-In addition to learning about `podman` and `buildah`, the workshop will cover a range of best practices around designing and implementing container images to ensure they are secure, techniques for configuring containers, and a range of other issues that need to be considered when building container images.
+In addition to covering general techniques, we will also look in detail at building container images when running applications written in the {{ PROGRAMMING_LANGUAGE }} language.
 
-For the workshop we will be using a Python web application, and as a result will include various best practices for building container images to support the use of Python.
+{% endif %}
+
+It is assumed you have had some previous exposure to what containers are, so we will be jumping straight into the hands on exercises.

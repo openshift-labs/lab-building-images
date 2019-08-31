@@ -67,4 +67,4 @@ Exit from the first interactive terminal by running:
 exit
 ```
 
-Because this was the main process running in the container, the container will be shutdown, resulting in the second interactive terminal session also being closed.
+Because this was the main process running in the container, having process ID 1, the container will be shutdown resulting in the second interactive terminal session also being closed.

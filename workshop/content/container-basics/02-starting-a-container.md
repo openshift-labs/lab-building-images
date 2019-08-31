@@ -31,7 +31,7 @@ If you run the command a second time:
 podman run docker.io/busybox:latest date
 ```
 
-you will see that it execute the `date` command immediately and does not log any details about needing to first pull down the container image. This is because the container image has been cached in the local environment and will be used on subsequent runs.
+you will see that it executes the `date` command immediately and does not log any details about needing to first pull down the container image. This is because the container image has been cached in the local environment and will be used on subsequent runs.
 
 You can see what container images have been pulled down to the local environment by running:
 

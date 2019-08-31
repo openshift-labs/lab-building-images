@@ -9,4 +9,7 @@ modules:
     - container-basics/01-introducing-podman
     - container-basics/02-starting-a-container
     - container-basics/03-interactive-terminal
+    - container-basics/04-stopped-containers
+    - container-basics/05-background-process
+    - container-basics/06-exposing-services
     - workshop-summary

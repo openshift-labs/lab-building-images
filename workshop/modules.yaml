@@ -13,6 +13,8 @@ modules:
         name: Introducing Podman
     container-basics/02-starting-a-container:
         name: Starting a Container
+    container-basics/03-interactive-terminal:
+        name: Interactive Terminal
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

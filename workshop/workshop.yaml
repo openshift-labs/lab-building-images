@@ -8,4 +8,5 @@ modules:
     - workshop-overview
     - container-basics/01-introducing-podman
     - container-basics/02-starting-a-container
+    - container-basics/03-interactive-terminal
     - workshop-summary

@@ -17,10 +17,8 @@ modules:
         name: Interactive Terminal
     container-basics/04-stopped-containers:
         name: Stopped Containers
-    container-basics/05-background-process:
-        name: Background Process
-    container-basics/06-exposing-services:
-        name: Exposing Services
+    container-basics/05-networked-services:
+        name: Networked Services
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

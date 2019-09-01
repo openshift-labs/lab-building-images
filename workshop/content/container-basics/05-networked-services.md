@@ -2,7 +2,7 @@ All the containers you have run so far remained attached to the terminal from wh
 
 Long lived network services run in a container will need to be detached from the terminal and run as a background process.
 
-To run a web server using the `busybox` image, which serves up files from the local `htdocs` directory run:
+To run a web server using the `busybox` image, which serves up files from the local `htdocs` directory, run:
 
 ```execute
 podman run --rm -d --name httpd -p 80:80 -v `pwd`/htdocs:/htdocs busybox httpd -f -h /htdocs -vv

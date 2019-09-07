@@ -11,4 +11,6 @@ modules:
     - container-basics/03-interactive-terminal
     - container-basics/04-stopped-containers
     - container-basics/05-networked-services
+    - creating-images/01-what-are-images
+    - creating-images/02-building-an-image
     - workshop-summary

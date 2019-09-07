@@ -19,6 +19,10 @@ modules:
         name: Stopped Containers
     container-basics/05-networked-services:
         name: Networked Services
+    creating-images/01-what-are-images:
+        name: What are Images
+    creating-images/02-building-an-image:
+        name: Building an Image
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

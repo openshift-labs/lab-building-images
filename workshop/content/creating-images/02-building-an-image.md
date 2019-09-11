@@ -6,4 +6,4 @@ There are three principal ways of building a container image. These are:
 
 * Creating a container image by importing a file system from a tarball.
 
-In this workshop you will be learning about using a `Dockerfile` as input to creating a container image, but before we start on that, we will touch briefly on the other methods described above.
+In this workshop the focus is on using a `Dockerfile` as input to creating a container image, but before we start on that, we will touch briefly on the other methods described above.

@@ -6,7 +6,7 @@ To illustrate this method, first start an instance of the `busybox` container wi
 podman run -it --name interactive busybox sh
 ```
 
-You would now run any commands to install additional packages. In the case of the `busybox`, it doesn't provide a package manager, so we will limit ourselves to creating a executable script file that we can run. To create the script file run:
+You would now run any commands to install additional packages. In the case of the `busybox` container image, it doesn't provide a package manager, so we will limit ourselves to creating a executable script file that we can run. To create the script file run:
 
 ```execute
 cat > hello << EOF
@@ -74,7 +74,7 @@ To create a container image from the saved state of the container, run:
 podman commit --change='CMD ["/hello"]' interactive hello
 ```
 
-The name of the container image you created was `hello`. To see the container image, run:
+The name of the container image you created was `hello`. To see details for the container image run:
 
 ```execute
 podman images

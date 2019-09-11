@@ -13,4 +13,6 @@ modules:
     - container-basics/05-networked-services
     - creating-images/01-what-are-images
     - creating-images/02-building-an-image
+    - creating-images/03-container-to-image
+    - creating-images/04-inspecting-layers
     - workshop-summary

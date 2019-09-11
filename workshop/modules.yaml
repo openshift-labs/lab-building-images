@@ -23,6 +23,10 @@ modules:
         name: What are Images
     creating-images/02-building-an-image:
         name: Building an Image
+    creating-images/03-container-to-image:
+        name: Container to Image
+    creating-images/04-inspecting-layers:
+        name: Inspecting Layers
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

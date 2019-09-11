@@ -2,7 +2,7 @@ You created a running container from a container image. The container image you 
 
 A container image was previously described as being a packaging mechanism for distributing an application, including the application software, operating system files, libraries and other software required by the application to run.
 
-In that sense, a container image can be seen as being a fancy form of tar file or zip file which is unpacked to populate a file system. It is though a bit more complicated than that.
+In that sense, a container image can be seen as being a fancy form of tarball or zip file which is unpacked to populate a file system. It is though a bit more complicated than that.
 
 Rather than being a single package containing all the required files, a container image is a set of packages, where each contains the files from a single layer of the container image.
 

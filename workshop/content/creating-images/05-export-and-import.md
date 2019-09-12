@@ -40,7 +40,7 @@ If you run:
 podman inspect imported
 ````
 
-you may also see additional differences. That is, information about the container image we want, such as the command to run, and the environment variables have been lost. This means we can't actually run this container image like we did before, without further work to update the container image metadata.
+you may also see additional differences. That is, information about the container image we want, such as the command to run, and the environment variables, have been lost. This means we can't actually run this container image like we did before, without further work to update the container image metadata.
 
 The `export` and `import` commands aren't therefore particularly useful by themselves. The point of showing it though was so you would know this is actually the wrong thing to use.
 

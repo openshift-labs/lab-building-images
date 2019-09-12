@@ -1,10 +1,12 @@
-The correct method to export a container image to get a tarball that can be subsequently used to reconstruct the original container image is therefore to run:
+The `podman` application also implement commands `save` and `load`. That there are two similar sets of commands can be confusing. Let's try again with these commands.
+
+First run:
 
 ```execute
 podman save -o saved.tar hello
 ```
 
-This time we are using the name of the container image, rather than a stopped container.
+This time we are using the name of the container image, rather than the name or ID of a stopped container.
 
 To view the contents of the tarball created this time, run:
 
@@ -12,7 +14,7 @@ To view the contents of the tarball created this time, run:
 tar tf saved.tar
 ```
 
-You will see that the tarball consists of a series of subdirectories. Within these subdirectories there is a further tarball. These correspond to the base layers in the original container image.
+You will see that the tarball consists of a series of subdirectories. Within these subdirectories there is a further tarball. These correspond to the layers in the original container image.
 
 You will also see that the tarball contains a `manifest.json` file. This is the metadata for the container image, so that details such as the command and environment variables can be applied against the reconstructed container image.
 
@@ -48,16 +50,16 @@ You should now be able to run the container image as you did before:
 podman run --rm loaded
 ```
 
-Before we move on, cleanup all the stopped container images.
+This time we have been successful.
+
+Before moving on, delete any stopped containers:
 
 ```execute
 podman rm $(podman ps -aq)
 ```
 
-Let's also delete some of those images we no longer require. You can do this using:
+and clean up the images which were created:
 
 ```execute
 podman rmi hello imported loaded
 ```
-
-When running this command, you can list more than one image at a time.

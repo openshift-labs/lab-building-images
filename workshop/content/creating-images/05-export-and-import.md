@@ -2,7 +2,7 @@ The last of the methods described for building a container image was by importin
 
 Rather than being a way of creating a container image from scratch, this method is usually used when you want to share a container image, but can't do it via an image registry.
 
-To export the file system from the stopped container run:
+To export a file system from a stopped container run:
 
 ```execute
 podman export -o exported.tar interactive
@@ -42,6 +42,4 @@ podman inspect imported
 
 you may also see additional differences. That is, information about the container image we want, such as the command to run, and the environment variables, have been lost. This means we can't actually run this container image like we did before, without further work to update the container image metadata.
 
-The `export` and `import` commands aren't therefore particularly useful by themselves. The point of showing it though was so you would know this is actually the wrong thing to use.
-
-If you want to transfer a container image without going through an image registry, it is actually `save` and `load` that you need to use. That there are two sets of commands can be confusing. But then, the likelihood of needing either of these is probably low anyway.
+The `export` and `import` commands don't therefore provide what we require in this case.

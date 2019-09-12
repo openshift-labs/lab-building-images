@@ -93,9 +93,3 @@ You can still run the container image with an alternative command if required.
 ```execute
 podman run --rm hello /goodbye
 ```
-
-Remove the stopped containers before continuing.
-
-```execute
-podman rm $(podman ps -aq)
-```

@@ -27,6 +27,10 @@ modules:
         name: Container to Image
     creating-images/04-inspecting-layers:
         name: Inspecting Layers
+    creating-images/05-export-and-import:
+        name: Export and Import
+    creating-images/06-save-and-load-image:
+        name: Save and Load Image
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

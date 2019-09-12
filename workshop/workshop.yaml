@@ -15,4 +15,6 @@ modules:
     - creating-images/02-building-an-image
     - creating-images/03-container-to-image
     - creating-images/04-inspecting-layers
+    - creating-images/05-export-and-import
+    - creating-images/06-save-and-load-image
     - workshop-summary

@@ -16,5 +16,6 @@ modules:
     - creating-images/03-container-to-image
     - creating-images/04-inspecting-layers
     - creating-images/05-export-and-import
-    - creating-images/06-save-and-load-image
+    - creating-images/06-save-and-load
+    - creating-images/07-using-a-dockerfile
     - workshop-summary

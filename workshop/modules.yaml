@@ -29,8 +29,10 @@ modules:
         name: Inspecting Layers
     creating-images/05-export-and-import:
         name: Export and Import
-    creating-images/06-save-and-load-image:
-        name: Save and Load Image
+    creating-images/06-save-and-load:
+        name: Save and Load
+    creating-images/07-using-a-dockerfile:
+        name: Using a Dockerfile
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

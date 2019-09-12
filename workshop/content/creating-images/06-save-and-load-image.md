@@ -9,10 +9,10 @@ This time we are using the name of the container image, rather than a stopped co
 To view the contents of the tarball created this time, run:
 
 ```execute
-tar tvf saved.tar
+tar tf saved.tar
 ```
 
-You will see that the tarball consists of a set of tarballs. Each of these tarballs corresponds to a layer from the container image.
+You will see that the tarball consists of a series of subdirectories. Within these subdirectories there is a further tarball. These correspond to the base layers in the original container image.
 
 You will also see that the tarball contains a `manifest.json` file. This is the metadata for the container image, so that details such as the command and environment variables can be applied against the reconstructed container image.
 

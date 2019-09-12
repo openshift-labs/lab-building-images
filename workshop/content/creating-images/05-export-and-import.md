@@ -11,7 +11,7 @@ podman export -o exported.tar interactive
 You can view the contents of the tarball by running:
 
 ```execute
-tar tvf exported.tar
+tar tf exported.tar
 ```
 
 To create a container image from this tarball run:
@@ -44,4 +44,4 @@ you may also see additional differences. That is, information about the containe
 
 The `export` and `import` commands aren't therefore particularly useful by themselves. The point of showing it though was so you would know this is actually the wrong thing to use.
 
-If you want to transfer a container image without going through an image registry, it is actually `save` and `load` that you want to used. That there are two sets of commands can be confusing. But then, the likelihood of needing either of these is probably low anyway.
+If you want to transfer a container image without going through an image registry, it is actually `save` and `load` that you need to use. That there are two sets of commands can be confusing. But then, the likelihood of needing either of these is probably low anyway.

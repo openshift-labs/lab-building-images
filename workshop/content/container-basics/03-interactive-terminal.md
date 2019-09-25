@@ -24,7 +24,7 @@ PID   USER     TIME  COMMAND
     8 root      0:00 ps
 ```
 
-Only processes started within the context of the container will be visible. Process running on the underlying container host are not visible.
+Only processes started within the context of the container will be visible. Processes running on the underlying container host are not visible.
 
 To see the list of containers which are running, you can run on the container host:
 

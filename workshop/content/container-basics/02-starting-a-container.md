@@ -23,7 +23,7 @@ Sat Aug 31 09:29:04 UTC 2019
 
 The command logs details about the steps taken to pull down the image to the local environment. Once that process is complete, a container is started from the container image and the `date` command specified on the command line is run inside of the container. Because the `date` command exits immediately, the container is shutdown straight away.
 
-In this case the container image which was used was called `busybox`. This is a very minimal Linux container image. We specified that the `latest` version of the container image be used, and that it should be pulled from the Docker Hub image registry (`docker.io`).
+In this case the container image which was used was called `busybox`. This is a very minimal Unix-like container image. We specified that the `latest` version of the container image be used, and that it should be pulled from the Docker Hub image registry (`docker.io`).
 
 If you run the command a second time:
 

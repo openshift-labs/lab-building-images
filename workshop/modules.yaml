@@ -33,6 +33,8 @@ modules:
         name: Save and Load
     creating-images/07-using-a-dockerfile:
         name: Using a Dockerfile
+    creating-images/08-choosing-a-base:
+        name: Choosing a Base
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

@@ -18,4 +18,5 @@ modules:
     - creating-images/05-export-and-import
     - creating-images/06-save-and-load
     - creating-images/07-using-a-dockerfile
+    - creating-images/08-choosing-a-base
     - workshop-summary

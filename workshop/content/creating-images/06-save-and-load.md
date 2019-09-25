@@ -3,7 +3,7 @@ The `podman` application also implement commands `save` and `load`. That there a
 First run:
 
 ```execute
-podman save -o saved.tar hello
+podman save -o saved.tar greeting
 ```
 
 This time we are using the name of the container image, rather than the name or ID of a stopped container.
@@ -52,6 +52,8 @@ podman run --rm loaded
 
 This time we have been successful.
 
+If needing to distribute a container image without using an image registry, you should therefore use `save` and `load`. Although `export` and `import` sound like they might be relevant, they don't provide a complete solution.
+
 Before moving on, delete any stopped containers:
 
 ```execute
@@ -61,5 +63,5 @@ podman rm $(podman ps -aq)
 and clean up the images which were created:
 
 ```execute
-podman rmi hello imported loaded
+podman rmi greeting imported loaded
 ```

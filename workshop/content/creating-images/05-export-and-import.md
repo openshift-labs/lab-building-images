@@ -2,10 +2,10 @@ The last of the methods described for building a container image was by importin
 
 Rather than being a way of creating a container image from scratch, this method is usually used when you want to share a container image, but can't do it via an image registry.
 
-To export a file system from a stopped container run:
+To export a copy of the file system from a stopped container run:
 
 ```execute
-podman export -o exported.tar interactive
+podman export -o exported.tar session
 ````
 
 You can view the contents of the tarball by running:

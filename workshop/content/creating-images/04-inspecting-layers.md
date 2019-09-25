@@ -1,7 +1,7 @@
 To inspect the layers of the container image you just created, run:
 
 ```execute
-podman history hello
+podman history greeting
 ```
 
 The output should be similar to:
@@ -20,7 +20,7 @@ Because you constructed the container image from a running container, there is n
 To see the metadata for the container image, you can also run:
 
 ```execute
-podman inspect hello
+podman inspect greeting
 ```
 
 This includes details on the layers, but also information about the command run when the container image is run, and details of any environment variables set by the container image.

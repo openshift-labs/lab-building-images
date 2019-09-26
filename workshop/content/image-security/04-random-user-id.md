@@ -44,7 +44,7 @@ whoami: cannot find name for user ID 1000000
 
 The reason the error occurs is because there is no entry in the `/etc/passwd` file of the container image, `whoami` cannot look up the user name for the user ID.
 
-It does succeed for `podman run` though, as `podman` will detect that there is no entry in `/etc/passwd` and inject one for you automatically. Running:
+It does succeed for `podman run` though, as `podman` will detect that there is no entry in `/etc/passwd` and inject one for you automatically. As a result, running:
 
 ```execute
 podman run --rm -u 1000000 greeting grep 1000000 /etc/passwd
@@ -57,5 +57,7 @@ will for `podman` yield:
 ```
 
 When adding the entry, `podman` will use the last value of `WORKDIR` in the `Dockerfile` used to build the container image.
+
+If using `docker run` no such entry would exist.
 
 For a container image that needs to be portable to different container runtimes, you will need to accomodate for the lack of an entry in the `/etc/passwd` file. This is because a lack of an entry can cause some applications to fail. Before we address that though, we are going to look at the issue of file system access when run as a random user ID.

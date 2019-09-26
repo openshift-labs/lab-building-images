@@ -50,8 +50,8 @@ The output should be similar to:
 
 ```
 ID             CREATED         CREATED BY                                      SIZE      COMMENT
-460214264921   7 minutes ago   /bin/sh -c #(nop) CMD [ "/hello" ]              0B
-8021112aa5fe   7 minutes ago   /bin/sh -c #(nop) COPY hello goodbye /          3.072kB
+460214264921   9 minutes ago   /bin/sh -c #(nop) CMD [ "/hello" ]              0B
+8021112aa5fe   9 seconds ago   /bin/sh -c #(nop) COPY hello goodbye /          3.072kB
 19485c79a9bb   2 weeks ago     /bin/sh -c #(nop) CMD ["sh"]                    3.072kB
 <missing>      2 weeks ago     /bin/sh -c #(nop) ADD file:9151f4d22f19f41...   1.437MB
 ```

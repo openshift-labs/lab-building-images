@@ -35,6 +35,8 @@ modules:
         name: Using a Dockerfile
     creating-images/08-choosing-a-base:
         name: Choosing a Base
+    creating-images/09-system-packages:
+        name: System Packages
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

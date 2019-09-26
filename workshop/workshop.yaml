@@ -19,4 +19,5 @@ modules:
     - creating-images/06-save-and-load
     - creating-images/07-using-a-dockerfile
     - creating-images/08-choosing-a-base
+    - creating-images/09-system-packages
     - workshop-summary

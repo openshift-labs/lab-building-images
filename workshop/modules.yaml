@@ -37,6 +37,8 @@ modules:
         name: Choosing a Base
     creating-images/09-system-packages:
         name: System Packages
+    image-security/01-running-as-root:
+        name: Running as Root
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

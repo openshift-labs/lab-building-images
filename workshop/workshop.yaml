@@ -21,4 +21,5 @@ modules:
     - creating-images/08-choosing-a-base
     - creating-images/09-system-packages
     - image-security/01-running-as-root
+    - image-security/02-dedicated-user
     - workshop-summary

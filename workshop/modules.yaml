@@ -39,6 +39,8 @@ modules:
         name: System Packages
     image-security/01-running-as-root:
         name: Running as Root
+    image-security/02-dedicated-user:
+        name: Dedicated User
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

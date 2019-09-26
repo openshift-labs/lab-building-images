@@ -72,4 +72,4 @@ podman run --rm greeting /goodbye
 
 For a full list of the instructions you can use in a `Dockerfile` check out the [Dockerfile reference](https://docs.docker.com/engine/reference/builder/).
 
-The workshop will not be going through everything you can do from a `Dockerfile`. Instructions you can use in a `Dockerfile` will be introduced, and the `COPY` and `CMD` statements covered in more details, as we proceed through the remainder of the workshop.
+The workshop will not be going through everything you can do from a `Dockerfile`. Instructions you can use in a `Dockerfile` will be introduced, and the `COPY` and `CMD` statements covered in more details as necessary, as we proceed through the remainder of the workshop.

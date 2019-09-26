@@ -50,7 +50,7 @@ Build the image by running:
 podman build -t greeting .
 ````
 
-The build will take a little bit longer this time as the `fedora` base image needs to be pulled down and it is somewhat larger than the more minimal `busybox` base image.
+The build may take a little bit longer as the `fedora` base image needs to be pulled down and it is somewhat larger than the more minimal `busybox` base image.
 
 When the build has completed check that the container image runs:
 

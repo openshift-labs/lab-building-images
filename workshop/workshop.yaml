@@ -23,4 +23,5 @@ modules:
     - image-security/01-running-as-root
     - image-security/02-dedicated-user
     - image-security/03-user-workspace
+    - image-security/04-random-user-id
     - workshop-summary

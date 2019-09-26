@@ -42,7 +42,9 @@ modules:
     image-security/02-dedicated-user:
         name: Dedicated User
     image-security/03-user-workspace:
-      name: User Workspace
+        name: User Workspace
+    image-security/04-random-user-id:
+        name: Random User ID
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

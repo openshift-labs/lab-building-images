@@ -22,4 +22,5 @@ modules:
     - creating-images/09-system-packages
     - image-security/01-running-as-root
     - image-security/02-dedicated-user
+    - image-security/03-user-workspace
     - workshop-summary

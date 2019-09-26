@@ -8,4 +8,4 @@ In addition to covering general techniques, we will also look in detail at build
 
 {% endif %}
 
-It is assumed you have a basic understanding of what containers are. In case you need a refresher, we will start with a quick recap of running and working with containers.
+It is assumed you have a basic understanding of what containers are and using them. In case you need a refresher, we will start with a recap of running and working with containers.

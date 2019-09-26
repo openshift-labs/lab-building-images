@@ -24,4 +24,5 @@ modules:
     - image-security/02-dedicated-user
     - image-security/03-user-workspace
     - image-security/04-random-user-id
+    - image-security/05-filesystem-access
     - workshop-summary

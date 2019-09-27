@@ -49,6 +49,8 @@ modules:
         name: Filesystem Access
     image-security/06-fixing-permissions:
         name: Fixing Permissions
+    image-security/07-identifying-users:
+        name: Identifying Users
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

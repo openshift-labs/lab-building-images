@@ -26,4 +26,5 @@ modules:
     - image-security/04-random-user-id
     - image-security/05-filesystem-access
     - image-security/06-fixing-permissions
+    - image-security/07-identifying-users
     - workshop-summary

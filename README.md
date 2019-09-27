@@ -10,6 +10,8 @@ Currently to run ``podman`` inside of OpenShift requires that it be run as `root
 
 Only use this workshop on an expendable cluster which is going to be destroyed when the workshop is finished. Alternatively, only allow people to do the workshop who you trust not to do the wrong thing and try and break the cluster.
 
+Also note that this workshop will currently only work on an OpenShift 3.11 environment. It will not work on OpenShift 4.X.
+
 Deploying the Workshop
 ----------------------
 

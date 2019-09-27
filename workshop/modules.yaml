@@ -51,6 +51,8 @@ modules:
         name: Fixing Permissions
     image-security/07-identifying-users:
         name: Identifying Users
+    image-security/08-injecting-the-user:
+        name: Injecting the User
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

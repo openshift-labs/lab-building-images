@@ -19,7 +19,7 @@ This time you should see:
 ```
 FROM fedora:30
 
-RUN dnf install -y --setopt=tsflags=nodocs procps && \
+RUN dnf install -y --setopt=tsflags=nodocs findutils procps && \
     dnf clean -y --enablerepo='*' all
 
 COPY hello goodbye /
@@ -27,7 +27,7 @@ COPY hello goodbye /
 CMD [ "/hello" ]
 ```
 
-The `RUN` instruction allows you to run a command in the context of the container being used to create your image. In this case we are using the `dnf` package manager for Fedora to install the `procps` package so we have the `ps` command.
+The `RUN` instruction allows you to run a command in the context of the container being used to create your image. In this case we are using the `dnf` package manager for Fedora to install the `findutils` and `procps` packages.
 
 Although having basic UNIX utilities available is useful, you don't need to have documentation files for them. If the package manager for the Linux distribution you are using supports it, exclude installation of documentation files. This is what the `--setopt=tsflags=nodocs` option does when running `dnf install`.
 
@@ -67,7 +67,7 @@ You should see output similar to:
 
 ```
 STEP 1: FROM fedora:30
-STEP 2: RUN dnf install -y procps &&     dnf clean -y --enablerepo='*' all
+STEP 2: RUN dnf install -y findutils procps &&     dnf clean -y --enablerepo='*' all
 --> Using cache ec436ed2924bd57d82609bc5a4bc26a9f2d76cd0a764515b8b618a138aab68e5
 STEP 3: COPY hello goodbye /
 cdce36e0893f68baaa8d661a375cbde6c83fdf69f4027cac961a62f9d1722a33

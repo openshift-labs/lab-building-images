@@ -52,6 +52,6 @@ indicating you are the `root` user inside of the container.
 
 Stop the container by killing it.
 
-```execute
+```execute-2
 podman kill `podman ps -ql`
 ```

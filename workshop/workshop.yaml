@@ -25,4 +25,5 @@ modules:
     - image-security/03-user-workspace
     - image-security/04-random-user-id
     - image-security/05-filesystem-access
+    - image-security/06-fixing-permissions
     - workshop-summary

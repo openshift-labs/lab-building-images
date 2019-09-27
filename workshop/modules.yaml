@@ -47,6 +47,8 @@ modules:
         name: Random User ID
     image-security/05-filesystem-access:
         name: Filesystem Access
+    image-security/06-fixing-permissions:
+        name: Fixing Permissions
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

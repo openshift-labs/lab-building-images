@@ -53,6 +53,8 @@ modules:
         name: Identifying Users
     image-security/08-injecting-the-user:
         name: Injecting the User
+    image-security/09-root-escalation:
+        name: Root Escalation
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

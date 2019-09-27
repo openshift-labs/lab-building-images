@@ -55,6 +55,8 @@ modules:
         name: Injecting the User
     image-security/09-root-escalation:
         name: Root Escalation
+    image-security/10-linux-capabilities:
+        name: Linux Capabilities
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

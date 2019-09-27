@@ -29,4 +29,5 @@ modules:
     - image-security/07-identifying-users
     - image-security/08-injecting-the-user
     - image-security/09-root-escalation
+    - image-security/10-linux-capabilities
     - workshop-summary

@@ -1,4 +1,4 @@
-Container platforms such as OpenShift avoid this problem with root escalation by applying a more strict security policy on containers. When using `podman` or `docker` there is nothing by default in place to prevent it.
+Container platforms such as OpenShift avoid this problem with root escalation by applying a more strict default security policy on containers. When using `podman` or `docker` though there is nothing by default in place to prevent it. Other container platforms may also not have default security policies in place which prevent this.
 
 The way that OpenShift avoids the problem is to drop the Linux capabilities from the container which allow a user to change user ID through requests to the Linux kernel.
 
@@ -44,7 +44,7 @@ Enter the password:
 secret
 ```
 
-This time it should fail, with the error:
+This time it should fail with the error:
 
 ```
 su: cannot set groups: Operation not permitted

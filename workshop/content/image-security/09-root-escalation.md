@@ -48,4 +48,10 @@ The output should be:
 uid=0(root) gid=0(root) groups=0(root)
 ```
 
-indicating you are the `root` user.
+indicating you are the `root` user inside of the container.
+
+Stop the container by killing it.
+
+```execute
+podman kill `podman ps -ql`
+```

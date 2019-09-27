@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Add an entry to the /etc/passwd file if required.
+
+STATUS=0 && whoami &> /dev/null || STATUS=$? && true
+
+if [[ "$STATUS" != "0" ]]; then
+    echo "$(id -u):x:$(id -u):$(id -g)::`pwd`:/bin/bash" >> /etc/passwd
+fi
+
+# Execute the original container command.
+
+exec "$@"

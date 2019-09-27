@@ -62,4 +62,4 @@ If you remember, when we added the dedicated user of `default`, we set the group
 
 This group ID was used rather than having a dedicated group for the user, or using the `users` group, to take advantage of the fact that when the container is run as a random user ID not in `/etc/passwd`, that it will be run with group ID of 0.
 
-With this being the case, all we need to ensure is that any steps run from the `Dockerfile` which copy or write files under `/opt/app-root`, fix up permissions afterwards so that the owner is the `default` user, that the group ID is 0, and that the directories and files are group writable where necessary.
+With this being the case, all we need to ensure is that any steps run from the `Dockerfile` which copy or write files under `/opt/app-root`, fix the permissions afterwards so that the owner is the `default` user, that the group ID is 0, and that the directories and files are group writable where necessary.

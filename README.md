@@ -1,7 +1,7 @@
 Lab - Building Images
 =====================
 
-This is a workshop on using and building container images using `podman`, including various opinionated best practices around constructing container images.
+This is a workshop on using and building container images using `podman`, including various opinionated best practices around constructing container images. It also touches on various practices specific to running Python applications.
 
 WARNING WARNING WARNING
 -----------------------

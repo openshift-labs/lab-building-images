@@ -1,9 +1,5 @@
 config:
     template_engine: liquid.js
-    vars:
-    - name: PROGRAMMING_LANGUAGE
-      value: UNKNOWN
-
 
 modules:
     workshop-overview:

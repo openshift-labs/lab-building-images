@@ -1,6 +1,6 @@
 We are done with our recap of what containers are, how to create them and how to build container images.
 
-You might be hoping we will now jump into various best practices around building container images for the {{ PROGRAMMING_LANGUAGE }} programming language. Before we do that though, we are going to look at an issue which is often overlooked, or is looked at too late in the development process, making it hard to go back and retrospectively implement best practices.
+You might be hoping we will now jump into various best practices around building container images for the Python programming language. Before we do that though, we are going to look at an issue which is often overlooked, or is looked at too late in the development process, making it hard to go back and retrospectively implement best practices.
 
 This issue is running containers in a way that applies good security principles.
 

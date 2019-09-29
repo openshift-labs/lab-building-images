@@ -32,10 +32,10 @@ podman run --rm common-base
 
 We could add to this common base image what we need for Python, but because we may want to create application images for other languages at some point, we can create an intermediate base image just for Python. This Python image can inherit from the common base image we just created though so we aren't duplicating it.
 
-Change to the `~/python-v1` sub directory.
+Change to the `~/python-base-v1` sub directory.
 
 ```execute
-cd ~/python-v1
+cd ~/python-base-v1
 ```
 View the contents of the `Dockerfile` by running:
 

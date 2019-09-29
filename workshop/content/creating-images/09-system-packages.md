@@ -19,7 +19,7 @@ This time you should see:
 ```
 FROM fedora:30
 
-RUN dnf install -y --setopt=tsflags=nodocs findutils procps && \
+RUN dnf install -y --setopt=tsflags=nodocs findutils procps which && \
     dnf clean -y --enablerepo='*' all
 
 COPY hello goodbye /
@@ -67,7 +67,7 @@ You should see output similar to:
 
 ```
 STEP 1: FROM fedora:30
-STEP 2: RUN dnf install -y findutils procps &&     dnf clean -y --enablerepo='*' all
+STEP 2: RUN dnf install -y findutils procps which &&     dnf clean -y --enablerepo='*' all
 --> Using cache ec436ed2924bd57d82609bc5a4bc26a9f2d76cd0a764515b8b618a138aab68e5
 STEP 3: COPY hello goodbye /
 cdce36e0893f68baaa8d661a375cbde6c83fdf69f4027cac961a62f9d1722a33

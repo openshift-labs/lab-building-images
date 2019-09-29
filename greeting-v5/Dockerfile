@@ -10,6 +10,8 @@ RUN useradd -u 1001 -g 0 -M -d /opt/app-root/src default && \
     chown -R 1001:0 /opt/app-root && \
     fix-permissions /opt/app-root
 
+USER 1001
+
 WORKDIR /opt/app-root/src
 
 ENV HOME=/opt/app-root/src \
@@ -18,7 +20,5 @@ ENV HOME=/opt/app-root/src \
 COPY --chown=1001:0 hello goodbye party bin/
 
 RUN fix-permissions /opt/app-root
-
-USER 1001
 
 CMD [ "hello" ]

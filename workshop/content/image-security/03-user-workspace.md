@@ -12,6 +12,20 @@ The home directory of the user was set to `/opt/app-root/src`, but the complete 
 
 The idea here is that `/opt/app-root` would act as a root directory for installing anything related to the application. This would be in place of installing the application under `/usr/local`, `/usr` or `/`. This has the benefit of keeping everything related to the application under one directory and not spread across the file system.
 
+To ensure the container runs as the dedicated user, we next add:
+
+```
+USER 1001
+```
+
+All `RUN` instructions after this point in the `Dockerfile`, if there were any, would be run as this user ID. Because it is the last time `USER` is specified, it also defines the user ID that the container started from the container image will run as.
+
+Note that we have used an integer user ID here rather than the user name. This is done so that a container platform the image is being deployed to, or other tooling, can validate what actual user ID the container would run as.
+
+If we had set `USER` to the user name `default` it can't be determined what actual user ID the container would run as, as the `/etc/passwd` file could have been modified to map the user `default` to the `root` user ID of 0.
+
+As such, always use an integer user ID value for the `USER` instruction to allow for automated auditing of the container image and what user ID it would run as.
+
 The next instruction added is:
 
 ```
@@ -36,20 +50,6 @@ Having set the `WORKDIR` as well as adding the `bin` directories to `PATH`, the 
 ```
 COPY hello goodbye party bin/
 ```
-
-To ensure that the container runs as the dedicated user we created, we then add:
-
-```
-USER 1001
-```
-
-All `RUN` instructions after this point in the `Dockerfile`, if there were any, would be run as this user ID. Because it is the last time `USER` is specified, it also defines the user ID that the container started from the container image will run as.
-
-Note that we have used an integer user ID here rather than the user name. This is done so that a container platform the image is being deployed to, or other tooling, can validate what actual user ID the container would run as.
-
-If we had set `USER` to the user name `default` it can't be determined what actual user ID the container would run as, as the `/etc/passwd` file could have been modified to map the user `default` to the `root` user ID of 0.
-
-As such, always use an integer user ID value for the `USER` instruction to allow for automated auditing of the container image and what user ID it would run as.
 
 Since the scripts are now in `PATH`, we also change the default command run when the container is started to not use an absolute pathname.
 

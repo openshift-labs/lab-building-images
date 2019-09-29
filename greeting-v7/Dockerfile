@@ -18,6 +18,8 @@ ENTRYPOINT [ "container-entrypoint" ]
 
 RUN sed -i.bak -e '1i auth requisite pam_deny.so' /etc/pam.d/su
 
+USER 1001
+
 WORKDIR /opt/app-root/src
 
 ENV HOME=/opt/app-root/src \
@@ -26,7 +28,5 @@ ENV HOME=/opt/app-root/src \
 COPY --chown=1001:0 hello goodbye party bin/
 
 RUN fix-permissions /opt/app-root
-
-USER 1001
 
 CMD [ "hello" ]

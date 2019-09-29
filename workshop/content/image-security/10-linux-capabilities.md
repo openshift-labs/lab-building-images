@@ -56,4 +56,10 @@ Verify that you are not `root` by running:
 id
 ```
 
-Regardless of measures we can put in place in the container image to prevent this, it is highly recommended that when deploying containers, to drop any Linux capabilities that you do not need. That way even if the way the container images was designed allowed switching to the `root` user from an unprivileged user, it would be blocked.  
+Regardless of measures we can put in place in the container image to prevent this, it is highly recommended that when deploying containers, to drop any Linux capabilities that you do not need. That way even if the way the container images was designed allowed switching to the `root` user from an unprivileged user, it would be blocked.
+
+Stop the container by killing it.
+
+```execute-2
+podman kill `podman ps -ql`
+```

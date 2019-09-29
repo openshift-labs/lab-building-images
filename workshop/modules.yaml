@@ -59,6 +59,8 @@ modules:
         name: Blocking of Sudo
     setup-environ/01-basic-application:
         name: Basic Application
+    setup-environ/02-application-logs:
+        name: Application Logs
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

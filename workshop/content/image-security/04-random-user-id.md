@@ -56,7 +56,7 @@ will for `podman` yield:
 1000000:x:1000000:0:container user:/opt/app-root/src:/bin/sh
 ```
 
-When adding the entry, `podman` will use the last value of `WORKDIR` in the `Dockerfile` used to build the container image.
+When adding the entry, `podman` will use as the home directory for the user the last value of `WORKDIR` as set in the `Dockerfile`.
 
 If using `docker run` no such entry would exist.
 

@@ -82,7 +82,7 @@ RUN chown -R 1001:0 /opt/app-root && \
     fix-permissions /opt/app-root
 ```
 
-You can avoid the need to change the owner and group by specifying what they should be in the `COPY` command.
+You can avoid the need to change the owner and group by specifying what they should be in the `COPY` command. In our case this is actually a necessity because these instructions are included after the switch to the dedicated user using the `USER` instruction. The `chown` command included in the `RUN` instruction would only work if `RUN` were being run as `root`.
 
 ```
 COPY --chown=1001:0 hello goodbye party bin/

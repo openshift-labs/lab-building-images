@@ -27,7 +27,7 @@ COPY hello goodbye /
 CMD [ "/hello" ]
 ```
 
-The `RUN` instruction allows you to run a command in the context of the container being used to create your image. In this case we are using the `dnf` package manager for Fedora to install the `findutils` and `procps` packages.
+The `RUN` instruction allows you to run a command in the context of the container being used to create your image. In this case we are using the `dnf` package manager for Fedora to install the `findutils`, `procps` and `which` packages.
 
 Although having basic UNIX utilities available is useful, you don't need to have documentation files for them. If the package manager for the Linux distribution you are using supports it, exclude installation of documentation files. This is what the `--setopt=tsflags=nodocs` option does when running `dnf install`.
 

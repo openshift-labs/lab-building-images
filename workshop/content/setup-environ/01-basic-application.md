@@ -64,11 +64,11 @@ EXPOSE 8080
 CMD [ "env", "FLASK_APP=app.py", "flask", "run", "--host=0.0.0.0", "--port=8080" ]
 ```
 
-The `RUN` instruction installs the Python packages we need using the `requirements.txt` file and fixes up the permissions afterwards.
+The `RUN` instruction runs `pip3` to install the Python packages listed in the `requirements.txt` file and fixes up the permissions afterwards.
 
-We used the `--no-cache-dir` option to `pip` as there is no point caching `pip` downloads. This is because the next build is going to start over fresh anyway. If we don't disable caching, it will just make our image use more space.
+We used the `--no-cache-dir` option to `pip3` as there is no point caching the downloads. This is because the next build is going to start over fresh anyway. If we don't disable caching, it will just make our image use more space.
 
-Because we installed the Python packages into the per user Python site packages directory, we need to ensure that `$HOME/.local/bin` is located in the application search path.
+Because we installed the Python packages into the per user Python site packages directory, we need to ensure that `$HOME/.local/bin` is included in the application search path.
 
 For the web server we have run the Flask development server, listening on port 8080. This is defined using the `CMD` instruction, with the port also documented used the `EXPOSE` instruction.
 

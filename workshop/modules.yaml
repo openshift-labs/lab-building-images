@@ -61,6 +61,8 @@ modules:
         name: Basic Application
     setup-environ/02-application-logs:
         name: Application Logs
+    setup-environ/03-derived-images:
+        name: Derived Images
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

@@ -34,4 +34,5 @@ modules:
     - image-security/12-blocking-of-sudo
     - setup-environ/01-basic-application
     - setup-environ/02-application-logs
+    - setup-environ/03-derived-images
     - workshop-summary

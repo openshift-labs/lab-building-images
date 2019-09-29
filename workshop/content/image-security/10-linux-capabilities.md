@@ -32,7 +32,7 @@ and update the `/etc/passwd` file.
 cat /tmp/passwd | sed "s%root:x%root:${HASHED_PASSWORD}%" > /etc/passwd
 ```
 
-Try again to use `su` to be come `root`.
+Try again to use `su` to become `root`.
 
 ```execute
 su root

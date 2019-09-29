@@ -24,7 +24,7 @@ Update the `/etc/passwd` file to set this hashed password as that for the `root`
 cat /tmp/passwd | sed "s%root:x%root:${HASHED_PASSWORD}%" > /etc/passwd
 ```
 
-Having updated the `/etc/passwd` file now execute `su` to be come `root`.
+Having updated the `/etc/passwd` file now execute `su` to become `root`.
 
 ```execute
 su root

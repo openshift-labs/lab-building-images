@@ -32,4 +32,5 @@ modules:
     - image-security/10-linux-capabilities
     - image-security/11-blocking-of-root
     - image-security/12-blocking-of-sudo
+    - setup-environ/01-basic-application
     - workshop-summary

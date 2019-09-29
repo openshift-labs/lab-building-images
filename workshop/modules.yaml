@@ -57,6 +57,8 @@ modules:
         name: Blocking of Root
     image-security/12-blocking-of-sudo:
         name: Blocking of Sudo
+    setup-environ/01-basic-application:
+        name: Basic Application
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

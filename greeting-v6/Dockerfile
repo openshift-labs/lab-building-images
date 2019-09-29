@@ -1,6 +1,6 @@
 FROM fedora:30
 
-COPY fix-permissions container-entrypoint /usr/bin/
+COPY fix-permissions /usr/bin/
 
 RUN dnf install -y --setopt=tsflags=nodocs findutils procps && \
     dnf clean -y --enablerepo='*' all
@@ -12,6 +12,10 @@ RUN useradd -u 1001 -g 0 -M -d /opt/app-root/src default && \
 
 RUN chmod g+w /etc/passwd
 
+COPY container-entrypoint /usr/bin/
+
+ENTRYPOINT [ "container-entrypoint" ]
+
 WORKDIR /opt/app-root/src
 
 ENV HOME=/opt/app-root/src \
@@ -22,7 +26,5 @@ COPY --chown=1001:0 hello goodbye party bin/
 RUN fix-permissions /opt/app-root
 
 USER 1001
-
-ENTRYPOINT [ "container-entrypoint" ]
 
 CMD [ "hello" ]

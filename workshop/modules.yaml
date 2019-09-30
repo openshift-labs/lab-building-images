@@ -69,6 +69,8 @@ modules:
         name: Python Packages
     setup-environ/06-shell-environment:
         name: Shell Environment
+    setup-environ/07-profile-scripts:
+        name: Profile Scripts
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

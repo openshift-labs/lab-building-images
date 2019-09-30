@@ -38,4 +38,5 @@ modules:
     - setup-environ/04-developer-roles
     - setup-environ/05-python-packages
     - setup-environ/06-shell-environment
+    - setup-environ/07-profile-scripts
     - workshop-summary

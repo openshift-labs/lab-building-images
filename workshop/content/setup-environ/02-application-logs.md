@@ -54,4 +54,4 @@ If the environment only needed to be set for the initial command the container i
 
 There is a solution which goes part way to addressing these issues, but the need to start adding more and more custom configuration starts to become a problem if in the long term you need to create distinct images for different applications. This is because you start duplicating common configuration in multiple places, which makes it much harder to update and maintain.
 
-Before we progress further, lets looks at breaking out what will be common configuration for a specific language runtime into a base image which can be used by multiple application images. This can also include all that configuration we are doing in the `Dockerfile` to set up a dedicated user account and lockdown access to `root`.
+Before we progress further, lets looks at breaking out what will be common configuration for a specific language runtime into a base image which can be used by multiple application images. This can also include all that configuration we are doing in the `Dockerfile` to set up a dedicated user account and lock down access to `root`.

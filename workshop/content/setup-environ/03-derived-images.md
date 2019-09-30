@@ -43,9 +43,13 @@ View the contents of the `Dockerfile` by running:
 cat Dockerfile
 ```
 
-For using Python, we know we will need additional system packages for things we will do later, so we add them now. Because the common base image was closed off with a `USER` of 1001, we need to switch back to `root` to install the system packages, and then revert to the dedicated user once done.
+For using Python, we need the system package for locale definitions and we know we will also need additional system packages for things we will do later, so we add them now.
 
-In the `RUN` command for installing the additional system packages take note that we set the `HOME` environment variable for the command to `/root`, which is the home directory for `root`. This is done so that any commands we run as `root`, do not drop files into the home directory for our dedicated user. This can occur where cache files or other user specific credential files are written out. If we don't change `HOME`, we would have to ensure we removed them from the home directory of the dedicated user. If we were to forget it can be hard in some cases to clean things up later. Best thing to do therefore is to override the `HOME` environment variable for the command so that it drops such files in the home directory of `root` instead.
+Because the common base image was closed off with a `USER` of 1001, we need to switch back to `root` to install the system packages, and then revert to the dedicated user once done.
+
+In the `RUN` command for installing the additional system packages take note that we set the `HOME` environment variable for the command to `/root`, which is the home directory for `root`. This will temporarily override the setting for `HOME` defined in the common base image which referenced the home directory of the dedicated user.
+
+This is done so that any commands we run as `root`, do not drop files into the home directory for our dedicated user. This can occur where cache files or other user specific credential files are written out. If we don't change `HOME`, we would have to ensure we removed them from the home directory of the dedicated user. If we were to forget it can be hard in some cases to clean things up later. Best thing to do therefore is to override the `HOME` environment variable for the command so that it drops such files in the home directory of `root` instead.
 
 For now we have also set the environment variables discussed previously for setting UTF-8 as the default encoding, and disabling buffering of `stdout` by Python.
 

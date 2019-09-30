@@ -36,5 +36,5 @@ modules:
     - setup-environ/02-application-logs
     - setup-environ/03-derived-images
     - setup-environ/04-developer-roles
-    - setup-environ/05-virtual-environment
+    - setup-environ/05-python-packages
     - workshop-summary

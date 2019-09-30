@@ -65,8 +65,8 @@ modules:
         name: Derived Images
     setup-environ/04-developer-roles:
         name: Developer Roles
-    setup-environ/05-virtual-environment:
-        name: Virtual Environment
+    setup-environ/05-python-packages:
+        name: Python Packages
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

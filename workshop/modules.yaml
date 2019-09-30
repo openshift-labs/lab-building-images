@@ -63,6 +63,8 @@ modules:
         name: Application Logs
     setup-environ/03-derived-images:
         name: Derived Images
+    setup-environ/04-developer-roles:
+        name: Developer Roles
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

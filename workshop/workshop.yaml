@@ -35,4 +35,5 @@ modules:
     - setup-environ/01-basic-application
     - setup-environ/02-application-logs
     - setup-environ/03-derived-images
+    - setup-environ/04-developer-roles
     - workshop-summary

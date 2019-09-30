@@ -8,7 +8,7 @@ Taking this approach also helps in an organisation in drawing lines between deve
 
 Operations teams may even want to take responsibility for the intermediate base images to ensure that what they include satisfies their operational requirements around monitoring and security.
 
-Container technology may be the latest cool thing around, but it can still be difficult to do it right. Design things in a way that simplify things for developers. Using intermediate base images is one way of doing that.
+Container technology may be the latest cool thing around, but it can still be difficult to do it right. Design things in a way that simplifies things for developers. Using intermediate base images is one way of doing that.
 
 With a goal of simplifying what a typical developer has to deal with, lets update our Python Flask application to use the Python base image.
 

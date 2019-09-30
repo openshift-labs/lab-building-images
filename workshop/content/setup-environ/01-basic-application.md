@@ -20,10 +20,10 @@ cat requirements.txt
 
 This lists the Python packages our application requires. For now we are installing just the `Flask` package.
 
-The Flask application is defined in the `app.py` file:
+The Flask application is defined in the `wsgi.py` file:
 
 ```execute
-cat app.py
+cat wsgi.py
 ```
 
 The contents of this should be:
@@ -31,12 +31,15 @@ The contents of this should be:
 ```
 from flask import Flask, request
 
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route("/")
+@application.route("/")
 def hello():
     print(request.environ)
     return "Hello, World!"
+
+if __name__ == "__main__":
+    application.run(host="0.0.0.0", port=8080)
 ```
 
 The Flask application returns "Hello, World!" for each request received.
@@ -52,27 +55,21 @@ cat Dockerfile
 The instructions specific to this application are:
 
 ```
-COPY --chown=1001:0 app.py requirements.txt ./
+COPY --chown=1001:0 wsgi.py requirements.txt ./
 
 RUN pip3 install --no-cache-dir --user -r requirements.txt && \
     fix-permissions /opt/app-root
 
-ENV PATH=$HOME/.local/bin:$PATH
-
 EXPOSE 8080
 
-CMD [ "env", "FLASK_APP=app.py", "flask", "run", "--host=0.0.0.0", "--port=8080" ]
+CMD [ "python3", "wsgi.py ]
 ```
 
 The `RUN` instruction runs `pip3` to install the Python packages listed in the `requirements.txt` file and fixes up the permissions afterwards.
 
 We used the `--no-cache-dir` option to `pip3` as there is no point caching the downloads. This is because the next build is going to start over fresh anyway. If we don't disable caching, it will just make our image use more space.
 
-Because we installed the Python packages into the per user Python site packages directory, we need to ensure that `$HOME/.local/bin` is included in the application search path.
-
-For the web server we have run the Flask development server, listening on port 8080. This is defined using the `CMD` instruction, with the port also documented used the `EXPOSE` instruction.
-
-We have overridden the host the web server listens on to use "0.0.0.0" so it will accept requests from outside of the container.
+To run the Flask application we run Python on the `wsgi.py` file. This is defined using the `CMD` instruction, with the port being used documented by the `EXPOSE` instruction.
 
 Build the container image:
 

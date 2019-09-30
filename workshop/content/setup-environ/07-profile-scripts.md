@@ -10,7 +10,7 @@ View the contents of the `Dockerfile`:
 cat Dockerfile
 ```
 
-A key change this time is the addition of the instructions:
+A key change this time is the addition of the `ENV` instruction:
 
 ```
 ENV BASH_ENV=/opt/app-root/etc/profile \
@@ -88,7 +88,31 @@ which will activate the Python virtual environment.
 
 It is necessary to check that the activation script exists as the profile scripts will also be triggered when the `assemble.sh` script is run during the building of the image. If there are steps in the profile scripts which can only be run when the container image is run, it would be necessary to add other checks in the profile scripts to determine if it is being executed for a build or at runtime.
 
-With the profile scripts set up in this case, they will always be run for the main command run for the container. They will also be run if using `podman exec` so long as it is an interactive shell or a shell script that is be run. If running an executable directly, such as `python`, you should use a command of the form:
+View the contents of the `assemble.sh` script:
+
+```execute
+cat etc/assemble.sh
+```
+
+The contents of this should be:
+
+```
+!/bin/bash
+
+python3 -m venv /opt/app-root
+
+source /opt/app-root/bin/activate
+
+pip3 install --no-cache-dir --upgrade pip setuptools wheel
+
+pip3 install --no-cache-dir -r requirements.txt
+
+fix-permissions /opt/app-root
+```
+
+This is where the Python virtual environment is first created, before installing the packages required by the application. Before we install those packages though, we first ensure that the `pip`, `setuptools` and `wheel` packages are the most up to date versions, as those installed into the Python virtual environment by `python3 -m venv` may not be the latest.
+
+With the profile scripts set up in this case, they will always be run for the main command run for the container. They will also be run if using `podman exec` so long as it is an interactive shell or a shell script that is being run. If running an executable directly, such as `python`, you should use a command of the form:
 
 ```
 podman exec <container-id> bash -c "python ..."

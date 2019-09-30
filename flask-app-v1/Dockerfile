@@ -27,13 +27,11 @@ ENV HOME=/opt/app-root/src \
 
 USER 1001
 
-COPY --chown=1001:0 app.py requirements.txt ./
+COPY --chown=1001:0 wsgi.py requirements.txt ./
 
 RUN pip3 install --no-cache-dir --user -r requirements.txt && \
     fix-permissions /opt/app-root
 
-ENV PATH=$HOME/.local/bin:$PATH
-
 EXPOSE 8080
 
-CMD [ "env", "FLASK_APP=app.py", "flask", "run", "--host=0.0.0.0", "--port=8080" ]
+CMD [ "python3", "wsgi.py" ]

@@ -37,4 +37,5 @@ modules:
     - setup-environ/03-derived-images
     - setup-environ/04-developer-roles
     - setup-environ/05-python-packages
+    - setup-environ/06-shell-environment
     - workshop-summary

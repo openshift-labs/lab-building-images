@@ -67,6 +67,8 @@ modules:
         name: Developer Roles
     setup-environ/05-python-packages:
         name: Python Packages
+    setup-environ/06-shell-environment:
+        name: Shell Environment
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

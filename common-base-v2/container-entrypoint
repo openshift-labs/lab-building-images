@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Execute the original container command.
+
+exec "$@"

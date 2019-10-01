@@ -113,6 +113,6 @@ The first is that our debugging statements output from the application didn't ge
 
 The second is that although installing the Python packages into the per user site packages directory worked okay in this case, using it can cause problems.
 
-A third and final issue is that we shouldn't be using the Flask development server, and Flask even warns us about that. Not only is the Flask development not production grade, it doesn't deal with reaping of zombie child processes for the container, a task which is the responsibility of whatever process in the container runs as process ID 1.
+A third and final issue is that we shouldn't be using the Flask development server, and Flask even warns us about that. Not only is the Flask development not production grade, it is possible that it may not deal with reaping of zombie child processes for the container, a task which is the responsibility of whatever process in the container runs as process ID 1.
 
 We will revisit each of these in subsequent exercises, as well as cover other recommendations on how to structure the container image to make it easier to support and work on.

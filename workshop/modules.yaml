@@ -73,7 +73,7 @@ modules:
         name: Profile Scripts
     python-server/08-zombie-reaping:
         name: Zombie Reaping
-    python-server/08-production-server:
+    python-server/09-production-server:
         name: Production Server
     workshop-summary:
         name: Workshop Summary

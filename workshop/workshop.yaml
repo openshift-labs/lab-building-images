@@ -40,5 +40,5 @@ modules:
     - python-server/06-shell-environment
     - python-server/07-profile-scripts
     - python-server/08-zombie-reaping
-    - python-server/08-production-server
+    - python-server/09-production-server
     - workshop-summary

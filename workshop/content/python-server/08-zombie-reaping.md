@@ -94,7 +94,7 @@ podman run --rm -p 8080:8080 flask-app
 Now stop the container using:
 
 ```execute-2
-podman stop `podman ps -ql`
+podman kill -s TERM `podman ps -ql`
 ```
 
 The container should still shutdown cleanly and without delay.

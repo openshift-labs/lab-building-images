@@ -79,7 +79,7 @@ podman build -t flask-app .
 Run the image:
 
 ```execute
-podman --rm -p 8080:8080 flask-app
+podman run --rm -p 8080:8080 flask-app
 ```
 
 and make a web request:
@@ -89,3 +89,9 @@ curl http://localhost:8080
 ```
 
 Although a production grade server, if you needed to do some code changes in the container to quickly test something, with the `run.sh` script above, automatic code reloading can be enabled for `mod_wsgi-express` by setting the required environment variable when running the container.
+
+Stop the container:
+
+```execute
+podman kill -s TERM `podman ps -ql`
+```

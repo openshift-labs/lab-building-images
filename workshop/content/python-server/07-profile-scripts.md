@@ -70,51 +70,71 @@ Jumping over to the `~/flask-app-v3` sub directory:
 cd ~/flask-app-v3
 ```
 
-View the contents of `sh.local` script:
-
-```execute
-cat etc/profile.d/sh.local
-```
-
-It contains:
-
-```
-if [ -f /opt/app-root/bin/activate ]; then
-    source /opt/app-root/bin/activate
-fi
-```
-
-which will activate the Python virtual environment.
-
-It is necessary to check that the activation script exists as the profile scripts will also be triggered when the `assemble.sh` script is run during the building of the image. If there are steps in the profile scripts which can only be run when the container image is run, it would be necessary to add other checks in the profile scripts to determine if it is being executed for a build or at runtime.
-
 View the contents of the `assemble.sh` script:
 
 ```execute
 cat etc/assemble.sh
 ```
 
-The contents of this should be:
+The contents of this is now:
 
 ```
-!/bin/bash
-
-python3 -m venv /opt/app-root
-
-source /opt/app-root/bin/activate
-
-pip3 install --no-cache-dir --upgrade pip setuptools wheel
+#!/bin/bash
 
 pip3 install --no-cache-dir -r requirements.txt
 
 fix-permissions /opt/app-root
 ```
 
-This is where the Python virtual environment was first created that was later activated from the `sh.local` script.
+The difference is that the `--user` option is no longer being used with `pip3` to install packages into the per user site packages directory. Yet, we aren't running as `root` at this point so can't be installing into the system Python installation either. This is because it is installing packages into a Python virtual environment.
 
-Note that because we are now using a virtual environment, before we install the application packages, we first ensure that the `pip`, `setuptools` and `wheel` packages are the most up to date versions. This is necessary as those installed into the Python virtual environment by `python3 -m venv` may not be the latest.
+Change directory to the `~/python-base-v2` sub directory.
 
-With the profile scripts set up in this case, they will always be run for the main command run for the container. They will also be run if using `podman exec` so long as it is an interactive shell or a shell script that is being run. If running an executable directly, such as `python`, you should use a command of the form:
+```execute
+cd ~/python-base-v2
+```
+
+View the contents of the `Dockerfile`:
+
+```execute
+cat Dockerfile
+```
+
+Here you will see that we have added at the end of the file:
+
+```
+RUN python3 -m venv /opt/app-root && \
+    source /opt/app-root/bin/activate && \
+    pip3 install --no-cache-dir --upgrade pip setuptools wheel && \
+    fix-permissions /opt/app-root
+```
+
+This creates a Python virtual environment with `/opt/app-root` as the root directory. We also ensure that the latest versions of `pip`, `setuptools` and `wheel` packages are installed, as what is installed using `python3 -m venv` when creating the virtual environment may not be the latest versions.
+
+To ensure the Python virtual environment is activated the file `/opt/app-root/etc/profile.d/python.sh` is added to the container image:
+
+```execute
+cat etc/profile.d/python.sh
+```
+
+This contains:
+
+```
+export PYTHONUNBUFFERED=1
+export PYTHONIOENCODING=UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+if [ -f /opt/app-root/bin/activate ]; then
+    source /opt/app-root/bin/activate
+fi
+```
+
+It is necessary to check that the activation script for the Python virtual environment exists as the profile scripts will also be triggered when the `assemble.sh` script is run during the building of the image. If there are steps in the profile scripts which can only be run when the container image is run, it would be necessary to add other checks in the profile scripts to determine if it is being executed for a build or at runtime.
+
+We also set again the environment variables we set in the `Dockerfile` in case the profile scripts need to be run again to restore the environment after being stripped for a managed sub process.
+
+With the profile scripts set up in this case, they will always be run for the main command run for the container. They will also be run if using `podman exec` so long as it is an interactive shell or a shell script that is being run. If running an executable directly, such as `python`, you would use a command of the form:
 
 ```
 podman exec <container-id> bash -c "python ..."

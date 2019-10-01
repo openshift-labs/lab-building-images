@@ -67,8 +67,8 @@ modules:
         name: Developer Roles
     python-server/05-python-packages:
         name: Python Packages
-    python-server/06-shell-environment:
-        name: Shell Environment
+    python-server/06-user-environment:
+        name: User Environment
     python-server/07-profile-scripts:
         name: Profile Scripts
     python-server/08-zombie-reaping:

@@ -16,7 +16,7 @@ cat Dockerfile
 
 This is the same common instructions we had previously, but we have collapsed some of the instructions together to reduce the number of layers which are created in the container image.
 
-We have also added a `run.sh` script and set it as the default command for the container image. When run it will display a simple usage message and exit. The intent is that this would be overridden in a derived image.
+We have also added a `usage.sh` script and set it as the default command for the container image. When run it will display a simple usage message and exit. The intent is that this would be overridden in a derived image using the `CMD` instruction.
 
 Build the image:
 
@@ -43,7 +43,7 @@ View the contents of the `Dockerfile` by running:
 cat Dockerfile
 ```
 
-For using Python, we need the system language package which includes locale definitions and we know we will also need additional system packages to enabled us to build Python extension modules, so we add them now.
+For using Python, we need the system language package which includes locale definitions and we know we will also need additional system packages to enable us to build Python extension modules, so we add them now.
 
 Because the common base image was closed off with a `USER` of 1001, we need to switch back to `root` to install the system packages, and then revert to the dedicated user once done.
 

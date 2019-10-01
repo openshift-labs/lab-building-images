@@ -19,10 +19,10 @@ ENV HOME=/opt/app-root/src \
 
 USER 1001
 
-COPY --chown=1001:0 run.sh /opt/app-root/etc/
+COPY --chown=1001:0 usage.sh /opt/app-root/etc/
 
 RUN fix-permissions /opt/app-root/
 
 ENTRYPOINT [ "container-entrypoint" ]
 
-CMD [ "/opt/app-root/etc/run.sh" ]
+CMD [ "/opt/app-root/etc/usage.sh" ]

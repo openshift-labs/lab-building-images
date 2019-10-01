@@ -37,7 +37,7 @@ modules:
     - python-server/03-derived-images
     - python-server/04-developer-roles
     - python-server/05-python-packages
-    - python-server/06-shell-environment
+    - python-server/06-user-environment
     - python-server/07-profile-scripts
     - python-server/08-zombie-reaping
     - python-server/09-production-server

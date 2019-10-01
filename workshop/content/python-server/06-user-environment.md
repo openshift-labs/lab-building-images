@@ -16,13 +16,13 @@ Build the image:
 podman build -t common-base .
 ```
 
-Change to the `~/python-base-v1` sub directory.
+Change to the `~/python-base-v2` sub directory.
 
 ```execute
-cd ~/python-base-v1
+cd ~/python-base-v2
 ```
 
-We didn't actually change anything in this but because we changed the common base image we need to rebuild it:
+We have made some changes here as well so rebuild it:
 
 ```execute
 podman build -t python-base .

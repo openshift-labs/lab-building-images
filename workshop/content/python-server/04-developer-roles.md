@@ -52,9 +52,11 @@ COPY --chown=1001:0 . /opt/app-root/
 RUN /opt/app-root/etc/assemble.sh
 
 EXPOSE 8080
+
+CMD [ "/opt/app-root/etc/run.sh" ]
 ```
 
-The set of instructions has therefore been much simplified. In part because we are inheriting from the Python base image, but also because we have pushed the steps for how to assemble the container image into the `assemble.sh` script. The `run.sh` script in turn contains the instructions to start the application. It overrides that added by the common base image which was already set up to be run when the container image is run.
+The set of instructions has therefore been much simplified. In part because we are inheriting from the Python base image, but also because we have pushed the steps for how to assemble the container image into the `assemble.sh` script. The `run.sh` script in turn contains the instructions to start the application.
 
 Copying the files into the container image has also been simplified by laying out the directories and files so they match where we want them to be installed under `/opt/app-root`. Only a single `COPY` command is then required to copy the completed directory hierarchy into the container image.
 

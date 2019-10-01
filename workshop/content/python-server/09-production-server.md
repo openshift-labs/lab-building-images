@@ -88,4 +88,4 @@ and make a web request:
 curl http://localhost:8080
 ```
 
-Although a production grade server, if you needed to do some code changes in the container to quickly test something, with the `run.sh` script above, automatic code reloading can be enabled for `mod_wsgi-express` by setting the required environment environment variable when running the container.
+Although a production grade server, if you needed to do some code changes in the container to quickly test something, with the `run.sh` script above, automatic code reloading can be enabled for `mod_wsgi-express` by setting the required environment variable when running the container.

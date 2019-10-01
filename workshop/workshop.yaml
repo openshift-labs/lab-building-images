@@ -41,4 +41,5 @@ modules:
     - python-server/07-profile-scripts
     - python-server/08-zombie-reaping
     - python-server/09-production-server
+    - python-server/10-using-warpdrive
     - workshop-summary

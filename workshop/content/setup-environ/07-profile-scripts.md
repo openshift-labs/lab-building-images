@@ -121,3 +121,5 @@ podman exec <container-id> bash -c "python ..."
 ```
 
 The execution of the command in a sub shell will ensure the profile scripts get run. If it is a command that you would regularly run, it is better that you add a script to your application code which wraps it up so you don't have to worry about using a sub shell.
+
+These changes have set us up with using a Python virtual environment, so onwards to the next issue of reaping of zombie processes.

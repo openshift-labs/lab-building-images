@@ -71,6 +71,8 @@ modules:
         name: Shell Environment
     setup-environ/07-profile-scripts:
         name: Profile Scripts
+    setup-environ/08-zombie-reaping:
+        name: Zombie Reaping
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

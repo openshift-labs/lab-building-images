@@ -39,4 +39,5 @@ modules:
     - setup-environ/05-python-packages
     - setup-environ/06-shell-environment
     - setup-environ/07-profile-scripts
+    - setup-environ/08-zombie-reaping
     - workshop-summary

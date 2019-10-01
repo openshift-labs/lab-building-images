@@ -1,5 +1,9 @@
 #!/bin/bash
 
+set -x
+
+set -eo pipefail
+
 prep_term()
 {
     unset term_child_pid

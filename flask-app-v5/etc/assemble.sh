@@ -1,5 +1,9 @@
 #!/bin/bash
 
+set -x
+
+set -eo pipefail
+
 python3 -m venv /opt/app-root
 
 source /opt/app-root/bin/activate

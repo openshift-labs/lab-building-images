@@ -1,5 +1,9 @@
 #!/bin/bash
 
+set -x
+
+set -eo pipefail
+
 ARGS=""
 
 ARGS="$ARGS --port 8080"

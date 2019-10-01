@@ -110,7 +110,9 @@ pip3 install --no-cache-dir -r requirements.txt
 fix-permissions /opt/app-root
 ```
 
-This is where the Python virtual environment is first created, before installing the packages required by the application. Before we install those packages though, we first ensure that the `pip`, `setuptools` and `wheel` packages are the most up to date versions, as those installed into the Python virtual environment by `python3 -m venv` may not be the latest.
+This is where the Python virtual environment was first created that was later activated from the `sh.local` script.
+
+Note that because we are now using a virtual environment, before we install the application packages, we first ensure that the `pip`, `setuptools` and `wheel` packages are the most up to date versions. This is necessary as those installed into the Python virtual environment by `python3 -m venv` may not be the latest.
 
 With the profile scripts set up in this case, they will always be run for the main command run for the container. They will also be run if using `podman exec` so long as it is an interactive shell or a shell script that is being run. If running an executable directly, such as `python`, you should use a command of the form:
 
@@ -118,4 +120,4 @@ With the profile scripts set up in this case, they will always be run for the ma
 podman exec <container-id> bash -c "python ..."
 ```
 
-The execution of the command in a sub shell will ensure the profile scripts get run. In this way you ensure that all applications can be initialised with the same environment as the application itself has without needing to run any manual steps.
+The execution of the command in a sub shell will ensure the profile scripts get run. If it is a command that you would regularly run, it is better that you add a script to your application code which wraps it up so you don't have to worry about using a sub shell.

@@ -28,7 +28,7 @@ The third is that we need to ensure that the Python virtual environment is activ
 
 And a fourth, is that the Python virtual environment is also activated for any application run separately in the container using `podman exec`.
 
-The first three of these are easy enough, but the fourth is harder than it looks especially if for some reason you need to use a non system Python installation, such as that from the Software Collections Library (SCL) packages for RHEL and CentOS.
+The first three of these are easy enough, but the fourth is harder than it looks especially if for some reason you need to use a non system Python installation, such as that from the Software Collections Library (SCL) packages for RHEL and CentOS as they need a separate activation step so the correct shared libraries are found.
 
 We could ignore this issue since we are using a system Python installation, but well go through how to handle it in case you want to apply the type of structure used in this workshop to a different Linux and Python distribution.
 

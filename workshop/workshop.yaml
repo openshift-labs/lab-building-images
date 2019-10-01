@@ -32,12 +32,13 @@ modules:
     - image-security/10-linux-capabilities
     - image-security/11-blocking-of-root
     - image-security/12-blocking-of-sudo
-    - setup-environ/01-basic-application
-    - setup-environ/02-application-logs
-    - setup-environ/03-derived-images
-    - setup-environ/04-developer-roles
-    - setup-environ/05-python-packages
-    - setup-environ/06-shell-environment
-    - setup-environ/07-profile-scripts
-    - setup-environ/08-zombie-reaping
+    - python-server/01-basic-application
+    - python-server/02-application-logs
+    - python-server/03-derived-images
+    - python-server/04-developer-roles
+    - python-server/05-python-packages
+    - python-server/06-shell-environment
+    - python-server/07-profile-scripts
+    - python-server/08-zombie-reaping
+    - python-server/08-production-server
     - workshop-summary

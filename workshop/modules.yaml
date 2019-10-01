@@ -57,22 +57,24 @@ modules:
         name: Blocking of Root
     image-security/12-blocking-of-sudo:
         name: Blocking of Sudo
-    setup-environ/01-basic-application:
+    python-server/01-basic-application:
         name: Basic Application
-    setup-environ/02-application-logs:
+    python-server/02-application-logs:
         name: Application Logs
-    setup-environ/03-derived-images:
+    python-server/03-derived-images:
         name: Derived Images
-    setup-environ/04-developer-roles:
+    python-server/04-developer-roles:
         name: Developer Roles
-    setup-environ/05-python-packages:
+    python-server/05-python-packages:
         name: Python Packages
-    setup-environ/06-shell-environment:
+    python-server/06-shell-environment:
         name: Shell Environment
-    setup-environ/07-profile-scripts:
+    python-server/07-profile-scripts:
         name: Profile Scripts
-    setup-environ/08-zombie-reaping:
+    python-server/08-zombie-reaping:
         name: Zombie Reaping
+    python-server/08-production-server:
+        name: Production Server
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

@@ -1,0 +1,3 @@
+if [ -f /opt/app-root/bin/activate ]; then
+    source /opt/app-root/bin/activate
+fi

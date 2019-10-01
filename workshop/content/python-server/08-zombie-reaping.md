@@ -24,7 +24,7 @@ It was necessary to use `exec` here so that our application became process ID 1 
 
 In doing that though, it meant the responsibility to reap the zombie processes fell to our application.
 
-For web servers which support multiple process, such as mod_wsgi, gunicorn and uWSGI, that they have to deal with the server processes stopping anyway, they will deal with the extra responsibility of reaping the zombie processes. If using a development server, or other single process web application, they may not. As such, it may be necessary to insert a process as process ID 1 which handles this, albeit that that process will also need to handle propagating signals to the managed process as well so it can be shutdown properly.
+For web servers which support multiple process, such as Apache/mod_wsgi, gunicorn and uWSGI, that they have to deal with the server processes stopping anyway, they will deal with the extra responsibility of reaping the zombie processes. If using a development server, or other single process web application, they may not. As such, it may be necessary to insert a process as process ID 1 which handles this, albeit that that process will also need to handle propagating signals to the managed process as well so it can be shutdown properly.
 
 This zombine process problem is described in more detail in the article [Docker and the pid 1 zombie reaping problem](https://blog.phusion.nl/2015/01/20/docker-and-the-pid-1-zombie-reaping-problem/).
 
@@ -73,7 +73,7 @@ wait_term
 
 Note that instead of using `exec`, we execute the Python process in the background.
 
-To verify this, change to then `~/flask-app-v4` sub directory:
+To verify this, change to the `~/flask-app-v4` sub directory:
 
 ```execute
 cd ~/flask-app-v4

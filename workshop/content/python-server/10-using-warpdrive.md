@@ -105,3 +105,5 @@ If you are instead using a web framework like Django, `warpdrive` will even dete
 In all cases, `warpdrive` will if the web server or application requires it, run it in a way that reaping of zombie processes is handled.
 
 In other words, `warpdrive` is magic, and can handle all the hard work of running the build steps to setup an application and then run it.
+
+More details on `warpdrive` can be found on [PyPi](https://pypi.org/project/warpdrive/) and by watching the YouTube video [Warpdrive, making Python web application deployment magically easy](https://www.youtube.com/watch?v=y_vwvqgRZK0). The project has been in stasis for the last couple of years, but the project is going to be rebooted and an attempt made to fill out the documentation for it.

@@ -61,6 +61,8 @@ podman build -t python-base .
 
 Note that we haven't applied any version tags here to either of these intermediate base images. If you were to use this approach of breaking functionality into base images, it is recommended that you start using version tags and bind applications to specific versions of images so you know what they are built against.
 
+Because we haven't used version tags and ensured that derived images, including the application image, refer to the base images using a different version tag in each case, you will see us using the `--no-cache` option when building the different versions of the examples. This is done to force a rebuild of all instructions defined in a `Dockerfile` so that cache layers are ignored.
+
 Run the image to verify the environment variables have been set:
 
 ```execute

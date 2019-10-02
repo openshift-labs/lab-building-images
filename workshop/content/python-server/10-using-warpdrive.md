@@ -51,7 +51,7 @@ In the case of starting the application, seeing that a `wsgi.py` file is provide
 To see this in action, build the image:
 
 ```execute
-podman build -t flask-app .
+podman build --no-cache -t flask-app .
 ```
 
 and run the application:

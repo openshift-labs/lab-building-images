@@ -7,7 +7,7 @@ cd ~/python-base-v3
 ```
 
 ```execute
-podman build -t python-base .
+podman build --no-cache -t python-base .
 ```
 
 ```execute
@@ -15,7 +15,7 @@ cd ~/flask-app-v7
 ```
 
 ```execute
-podman build -t flask-app .
+podman build --no-cache -t flask-app .
 ```
 
 ```execute
@@ -24,4 +24,8 @@ podman run --rm -p 8080:8080 flask-app
 
 ```execute-2
 curl http://localhost:8080
+```
+
+```execute-2
+podman kill -s TERM `podman ps -ql`
 ```

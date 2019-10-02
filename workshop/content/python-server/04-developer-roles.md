@@ -63,7 +63,7 @@ Copying the files into the container image has also been simplified by laying ou
 Build the new version of the image:
 
 ```execute
-podman build -t flask-app .
+podman build --no-cache -t flask-app .
 ```
 
 and run the image:

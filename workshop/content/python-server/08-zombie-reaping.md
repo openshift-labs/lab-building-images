@@ -82,7 +82,7 @@ cd ~/flask-app-v4
 Build the image:
 
 ```execute
-podman build -t flask-app .
+podman build --no-cache -t flask-app .
 ```
 
 and run the image:

@@ -78,7 +78,7 @@ podman build -t flask-app .
 
 Run the image:
 
-```execute
+```execute-2
 podman run --rm -p 8080:8080 flask-app
 ```
 

@@ -4,7 +4,7 @@ USER root
 
 RUN HOME=/root && \
     dnf install -y --setopt=tsflags=nodocs glibc-langpack-en \
-      redhat-rpm-config gcc python3-devel httpd-devel && \
+      redhat-rpm-config gcc python3-devel httpd-devel supervisor && \
     dnf clean -y --enablerepo='*' all
 
 ENV PYTHONUNBUFFERED=1 \

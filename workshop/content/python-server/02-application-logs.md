@@ -1,6 +1,6 @@
 Any log messages recorded by an application should be logged to the console, either `stdout` or `stderr`. An application should not log to a file.
 
-The reason for logging to the console is it allows the container runtime to capture the logs from all containers and make then accessible, or pipe them into a log aggregation system. In the case of `podman`, logs can be accessed using the `podman logs` command.
+The reason for logging to the console is it allow the container runtime to capture the logs from all containers and make then accessible, or pipe them into a log aggregation system. In the case of `podman`, logs can be accessed using the `podman logs` command.
 
 If your application logs to a file, the log file is only usually accessible within the container. To view the applications logs you would need to access the container. If log messages are sent to a file, and the log file is not truncated periodically, you could eventually exceed any file system quota granted to the container and cause a failure of the application.
 

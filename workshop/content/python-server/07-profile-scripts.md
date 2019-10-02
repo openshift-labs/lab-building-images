@@ -70,10 +70,10 @@ Jumping over to the `~/flask-app-v3` sub directory:
 cd ~/flask-app-v3
 ```
 
-View the contents of the `assemble.sh` script:
+View the contents of the `assemble-image` script:
 
 ```execute
-cat etc/assemble.sh
+cat bin/assemble-image
 ```
 
 The contents of this is now:
@@ -105,13 +105,13 @@ Here you will see that we have added at the end of the file:
 ```
 COPY --chown=1001:0 . /opt/app-root/
 
-RUN python3 -m venv /opt/app-root && \
-    source /opt/app-root/bin/activate && \
+RUN python3 -m venv /opt/app-root/venv && \
+    source /opt/app-root/venv/bin/activate && \
     pip3 install --no-cache-dir --upgrade pip setuptools wheel && \
     fix-permissions /opt/app-root
 ```
 
-This creates a Python virtual environment with `/opt/app-root` as the root directory. We also ensure that the latest versions of `pip`, `setuptools` and `wheel` packages are installed, as what is installed using `python3 -m venv` when creating the virtual environment may not be the latest versions.
+This creates a Python virtual environment with `/opt/app-root/venv` as the root directory. We also ensure that the latest versions of `pip`, `setuptools` and `wheel` packages are installed, as what is installed using `python3 -m venv` when creating the virtual environment may not be the latest versions.
 
 To ensure the Python virtual environment is activated the file `/opt/app-root/etc/profile.d/python.sh` is added to the container image:
 
@@ -127,12 +127,12 @@ export PYTHONIOENCODING=UTF-8
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-if [ -f /opt/app-root/bin/activate ]; then
-    source /opt/app-root/bin/activate
+if [ -f /opt/app-root/venv/bin/activate ]; then
+    source /opt/app-root/venv/bin/activate
 fi
 ```
 
-It is necessary to check that the activation script for the Python virtual environment exists as the profile scripts will also be triggered when the `assemble.sh` script is run during the building of the image. If there are steps in the profile scripts which can only be run when the container image is run, it would be necessary to add other checks in the profile scripts to determine if it is being executed for a build or at runtime.
+It is necessary to check that the activation script for the Python virtual environment exists as the profile scripts will also be triggered when the `assemble-image` script is run during the building of the image. If there are steps in the profile scripts which can only be run when the container image is run, it would be necessary to add other checks in the profile scripts to determine if it is being executed for a build or at runtime.
 
 We also set again the environment variables we set in the `Dockerfile` in case the profile scripts need to be run again to restore the environment after being stripped for a managed sub process.
 

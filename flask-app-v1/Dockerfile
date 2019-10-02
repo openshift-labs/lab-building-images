@@ -32,6 +32,6 @@ COPY --chown=1001:0 wsgi.py requirements.txt ./
 RUN pip3 install --no-cache-dir --user -r requirements.txt && \
     fix-permissions /opt/app-root
 
-EXPOSE 8080
-
 CMD [ "python3", "wsgi.py" ]
+
+EXPOSE 8080

@@ -26,10 +26,10 @@ cat src/requirements.txt
 
 The `mod_wsgi` package has been added. As the Apache HTTPD web server is required that also needs to be installed, but this was already installed as part of the Python base image.
 
-The `run.sh` file is then updated to use `mod_wsgi-express`.
+The `start-container` script is then updated to use `mod_wsgi-express`.
 
 ```execute
-cat etc/run.sh
+cat bin/start-container
 ```
 
 It has been set to:
@@ -88,7 +88,7 @@ and make a web request:
 curl http://localhost:8080
 ```
 
-Although a production grade server, if you needed to do some code changes in the container to quickly test something, with the `run.sh` script above, automatic code reloading can be enabled for `mod_wsgi-express` by setting the required environment variable when running the container.
+Although a production grade server, if you needed to do some code changes in the container to quickly test something, with the `start-container` script above, automatic code reloading can be enabled for `mod_wsgi-express` by setting the required environment variable when running the container.
 
 Stop the container:
 

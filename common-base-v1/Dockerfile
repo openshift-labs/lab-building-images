@@ -1,6 +1,6 @@
 FROM fedora:30
 
-COPY fix-permissions container-entrypoint /usr/bin/
+COPY fix-permissions container-entrypoint container-usage /usr/bin/
 
 RUN dnf install -y --setopt=tsflags=nodocs findutils procps which && \
     dnf clean -y --enablerepo='*' all && \
@@ -19,10 +19,6 @@ ENV HOME=/opt/app-root/src \
 
 USER 1001
 
-COPY --chown=1001:0 usage.sh /opt/app-root/etc/
-
-RUN fix-permissions /opt/app-root/
-
 ENTRYPOINT [ "container-entrypoint" ]
 
-CMD [ "/opt/app-root/etc/usage.sh" ]
+CMD [ "container-usage" ]

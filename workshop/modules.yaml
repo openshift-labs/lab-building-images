@@ -77,6 +77,8 @@ modules:
         name: Production Server
     python-server/10-using-warpdrive:
         name: Using Warpdrive
+    python-server/11-bundled-deployer:
+        name: Bundled Deployer
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

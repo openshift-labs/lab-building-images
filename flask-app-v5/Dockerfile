@@ -2,8 +2,8 @@ FROM python-base:latest
 
 COPY --chown=1001:0 . /opt/app-root/
 
-RUN /opt/app-root/etc/assemble.sh
+RUN assemble-image
+
+CMD [ "start-container" ]
 
 EXPOSE 8080
-
-CMD [ "/opt/app-root/etc/run.sh" ]

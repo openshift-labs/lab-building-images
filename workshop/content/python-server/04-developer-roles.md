@@ -24,16 +24,16 @@ View the contents of the directory:
 ls -lasR
 ```
 
-You will see that the structure has been changed with the application source code moved into the `src` sub directory. We have also created an `etc` directory. This contains an `assemble.sh` script which includes the steps to build and install the application source code:
+You will see that the structure has been changed with the application source code moved into the `src` sub directory. We have also created an `bin` directory. This contains an `assemble-image` script which includes the steps to build and install the application source code:
 
 ```execute
-cat etc/assemble.sh
+cat bin/assemble-image
 ```
 
-and a `run.sh` script which says how to start the application.
+and a `start-container` script which says how to start the application.
 
 ```execute
-cat etc/run.sh
+cat bin/start-container
 ```
 
 View the contents of the `Dockerfile` by running:
@@ -49,14 +49,14 @@ FROM python-base:latest
 
 COPY --chown=1001:0 . /opt/app-root/
 
-RUN /opt/app-root/etc/assemble.sh
+RUN assemble-image
+
+CMD [ "start-container" ]
 
 EXPOSE 8080
-
-CMD [ "/opt/app-root/etc/run.sh" ]
 ```
 
-The set of instructions has therefore been much simplified. In part because we are inheriting from the Python base image, but also because we have pushed the steps for how to assemble the container image into the `assemble.sh` script. The `run.sh` script in turn contains the instructions to start the application.
+The set of instructions has therefore been much simplified. In part because we are inheriting from the Python base image, but also because we have pushed the steps for how to assemble the container image into the `assemble-image` script. The `start-container` script in turn contains the instructions to start the application.
 
 Copying the files into the container image has also been simplified by laying out the directories and files so they match where we want them to be installed under `/opt/app-root`. Only a single `COPY` command is then required to copy the completed directory hierarchy into the container image.
 

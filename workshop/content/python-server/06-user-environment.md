@@ -64,7 +64,7 @@ From the interactive terminal work out which Python executable is in the `PATH`.
 which python3
 ```
 
-Rather than find the system Python executable, it should find it from the Python virtual environment located under `/opt/app-root`.
+Rather than find the system Python executable, it should find it from the Python virtual environment located under `/opt/app-root/venv`.
 
 Next verify what packages are installed:
 

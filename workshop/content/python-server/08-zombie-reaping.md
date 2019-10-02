@@ -10,7 +10,7 @@ Because the processes have stopped, then any memory has already been released, b
 
 As a consequence, whatever application runs as process ID 1 in the container must be implemented in a way that it cleans up these zombie processes.
 
-For our application image the `run.sh` script was run when the container was started. This contained:
+For our application image the `start-container` script was run when the container was started. This contained:
 
 ```
 #!/bin/bash
@@ -32,7 +32,7 @@ A solution often touted for this is to use a mini init process such as `tini` or
 
 As it happens there is a simpler solution which requires only a shell script. This is something the article above said wasn't possible, but it is, as per article [How to propagate SIGTERM to a child process in a Bash script](http://veithen.io/2014/11/16/sigterm-propagation.html) and follow up with improved solution in [Forward SIGTERM to child in bash](https://unix.stackexchange.com/questions/146756/forward-sigterm-to-child-in-bash/444676#444676).
 
-Our new `run.sh` script therefore would be:
+Our new `start-container` script therefore would be:
 
 ```
 #!/bin/bash

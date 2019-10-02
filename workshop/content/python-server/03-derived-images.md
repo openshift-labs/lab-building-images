@@ -16,7 +16,7 @@ cat Dockerfile
 
 This is the same common instructions we had previously, but we have collapsed some of the instructions together to reduce the number of layers which are created in the container image.
 
-We have also added a `usage.sh` script and set it as the default command for the container image. When run it will display a simple usage message and exit. The intent is that this would be overridden in a derived image using the `CMD` instruction.
+We have also added a `container-usage` script and set it as the default command for the container image. When run it will display a simple usage message and exit. The intent is that this would be overridden in a derived image using the `CMD` instruction.
 
 Build the image:
 

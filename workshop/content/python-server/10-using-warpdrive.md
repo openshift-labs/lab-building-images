@@ -1,6 +1,6 @@
-By using an `assemble.sh` and `run.sh` script we have attempted to break out the more complex steps from the `Dockerfile` in order to keep it as simple as possible. The `run.sh` script has had to change dependent on the WSGI server we want to use when running a WSGI application, and how we start the application will differ again for other types of web applications.
+By using an `assemble-image` and `start-container` script we have attempted to break out the more complex steps from the `Dockerfile` in order to keep it as simple as possible. The `start-container` script has had to change dependent on the WSGI server we want to use when running a WSGI application, and how we start the application will differ again for other types of web applications.
 
-A big question is whether we can start to encapsulate some of this variation for different application types and web servers in a generic set of `assemble.sh` and `run.sh` scripts, where hook scripts can be supplied as necessary to handle any variations still required for certain circumstances.
+A big question is whether we can start to encapsulate some of this variation for different application types and web servers in a generic set of `assemble-image` and `start-container` scripts, where hook scripts can be supplied as necessary to handle any variations still required for certain circumstances.
 
 A system which attempts to do just this is the `warpdrive` module. To see how this module can be used, change to the `~/flask-app-v6` sub directory.
 
@@ -8,10 +8,10 @@ A system which attempts to do just this is the `warpdrive` module. To see how th
 cd ~/flask-app-v6
 ```
 
-View the contents of the `etc/assemble.sh` script:
+View the contents of the `bin/assemble-image` script:
 
 ```execute
-cat etc/assemble.sh
+cat bin/assemble-image
 ```
 
 You should find:
@@ -28,10 +28,10 @@ warpdrive fixup /opt/app-root
 
 The script installs the `warpdrive` module, then delegates the task of building everything required for the application to `warpdrive` by running `warpdrive build`. The `warpdrive fixup` command is then run to fix up permissions on the directory where the application lives.
 
-View the contents of the `etc/run.sh` script:
+View the contents of the `bin/start-container` script:
 
 ```execute
-cat etc/run.sh
+cat bin/start-container
 ```
 
 You should find:

@@ -19,6 +19,10 @@ ENV HOME=/opt/app-root/src \
 
 USER 1001
 
+COPY --chown=1001:0 etc/. /opt/app-root/etc/
+
+RUN fix-permissions /opt/app-root/
+
 ENV BASH_ENV=/opt/app-root/etc/profile \
     ENV=/opt/app-root/etc/profile \
     PROMPT_COMMAND=". /opt/app-root/etc/profile"

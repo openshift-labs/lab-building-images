@@ -5,3 +5,7 @@ This has included using `podman` to run containers and build container images, a
 For further information on `podman` see:
 
 * https://podman.io/
+
+The workshop content itself can be found at:
+
+* https://github.com/openshift-labs/lab-building-images

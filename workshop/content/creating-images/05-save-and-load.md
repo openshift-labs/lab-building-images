@@ -1,4 +1,8 @@
-The `podman` application also implement commands `save` and `load`. That there are two similar sets of commands can be confusing. Let's try again with these commands.
+The last of the methods described for building a container image was by importing a copy of the file system to be used for the container image from a tarball.
+
+Rather than being a way of creating a container image from scratch, this method is usually used when you want to share a container image, but can't do it via an image registry.
+
+The `podman` application implements the commands `save` and `load` for this purpose. Note that there are two similar commands called `export` and `import`. These latter commands do not do what is required, use `save` and `load`.
 
 First run:
 
@@ -6,7 +10,7 @@ First run:
 podman save -o saved.tar greeting
 ```
 
-This time we are using the name of the container image, rather than the name or ID of a stopped container.
+We need to use the name of the container image, not the name or ID of a stopped container.
 
 To view the contents of the tarball created this time, run:
 
@@ -50,8 +54,6 @@ You should now be able to run the container image as you did before:
 podman run --rm loaded
 ```
 
-This time we have been successful.
-
 If needing to distribute a container image without using an image registry, you should therefore use `save` and `load`. Although `export` and `import` sound like they might be relevant, they don't provide a complete solution.
 
 Before moving on, delete any stopped containers:
@@ -63,5 +65,5 @@ podman rm $(podman ps -aq)
 and clean up the images which were created:
 
 ```execute
-podman rmi greeting imported loaded
+podman rmi greeting loaded
 ```

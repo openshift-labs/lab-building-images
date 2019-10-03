@@ -23,15 +23,13 @@ modules:
         name: Container to Image
     creating-images/04-inspecting-layers:
         name: Inspecting Layers
-    creating-images/05-export-and-import:
-        name: Export and Import
-    creating-images/06-save-and-load:
+    creating-images/05-save-and-load:
         name: Save and Load
-    creating-images/07-using-a-dockerfile:
+    creating-images/06-using-a-dockerfile:
         name: Using a Dockerfile
-    creating-images/08-choosing-a-base:
+    creating-images/07-choosing-a-base:
         name: Choosing a Base
-    creating-images/09-system-packages:
+    creating-images/08-system-packages:
         name: System Packages
     image-security/01-running-as-root:
         name: Running as Root

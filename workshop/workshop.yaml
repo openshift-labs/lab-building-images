@@ -15,11 +15,10 @@ modules:
     - creating-images/02-building-an-image
     - creating-images/03-container-to-image
     - creating-images/04-inspecting-layers
-    - creating-images/05-export-and-import
-    - creating-images/06-save-and-load
-    - creating-images/07-using-a-dockerfile
-    - creating-images/08-choosing-a-base
-    - creating-images/09-system-packages
+    - creating-images/05-save-and-load
+    - creating-images/06-using-a-dockerfile
+    - creating-images/07-choosing-a-base
+    - creating-images/08-system-packages
     - image-security/01-running-as-root
     - image-security/02-dedicated-user
     - image-security/03-user-workspace

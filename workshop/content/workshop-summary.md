@@ -1,9 +1,7 @@
-In this workshop you have learnt how to build container images using `podman` and `buildah`, along with various best practices for building images.
+In this workshop we have been through a range of topics about using and building container images.
 
-For further information on `buildah` see:
+This has included using `podman` to run containers and build container images, and when building container images various best practices for creating a secure container image, requirements for logging, reaping of zombie processes, setting up of the user environment for the container and use of common base images. For Python we looked at use of Python virtual environments, WSGI servers for production deployments and ways of simplifying the task of building container images for developers, and running them.
 
-* https://buildah.io/
-
-And for `podman` see:
+For further information on `podman` see:
 
 * https://podman.io/

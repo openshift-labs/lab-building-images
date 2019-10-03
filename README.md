@@ -27,6 +27,8 @@ The ``--recurse-submodules`` option ensures that Git submodules are checked out.
 git submodule update --recursive --remote
 ```
 
+Login to your OpenShift cluster as a cluster admin. You cannot deploy the workshop as a normal user.
+
 Next create a project in OpenShift into which the workshop is to be deployed.
 
 ```

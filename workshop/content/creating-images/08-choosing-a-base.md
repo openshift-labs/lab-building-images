@@ -35,14 +35,14 @@ cat Dockerfile
 This time you should see:
 
 ```
-FROM fedora:30
+FROM fedora:31
 
 COPY hello goodbye /
 
 CMD [ "/hello" ]
 ```
 
-Only the `FROM` instruction has been changed. This time the `fedora:30` base image is referenced instead of the `busybox` image.
+Only the `FROM` instruction has been changed. This time the `fedora:31` base image is referenced instead of the `busybox` image.
 
 Build the image by running:
 

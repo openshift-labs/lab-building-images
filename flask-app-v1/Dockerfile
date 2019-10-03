@@ -1,4 +1,4 @@
-FROM fedora:30
+FROM fedora:31
 
 COPY fix-permissions /usr/bin/
 

@@ -67,6 +67,8 @@ EXPOSE 8080
 
 The `RUN` instruction runs `pip3` to install the Python packages listed in the `requirements.txt` file and fixes up the permissions afterwards.
 
+Note that we also had to install the system package `python3-pip` to have `pip3` available in the image.
+
 We used the `--no-cache-dir` option to `pip3` as there is no point caching the downloads. This is because the next build is going to start over fresh anyway. If we don't disable caching, it will just make our image use more space.
 
 To run the Flask application we run Python on the `wsgi.py` file. This is defined using the `CMD` instruction, with the port being used documented by the `EXPOSE` instruction.

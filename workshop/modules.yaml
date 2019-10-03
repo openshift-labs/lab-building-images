@@ -4,6 +4,9 @@ config:
 modules:
     workshop-overview:
         name: Workshop Overview
+        exit_sign: Using Homeroom
+    using-homeroom:
+        name: Using Homeroom
         exit_sign: Start Workshop
     container-basics/01-introducing-podman:
         name: Introducing Podman

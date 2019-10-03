@@ -1,11 +1,9 @@
 name: Building Container Images
 
-vars:
-    PROGRAMMING_LANGUAGE: Python
-
 modules:
     activate:
     - workshop-overview
+    - using-homeroom
     - container-basics/01-introducing-podman
     - container-basics/02-starting-a-container
     - container-basics/03-interactive-terminal

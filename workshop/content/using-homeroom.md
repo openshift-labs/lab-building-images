@@ -7,7 +7,7 @@ The Homeroom dashboard provides you access to the workshop content and one or mo
 As you work through the workshop content you will encounter commands that you need to run in the terminals. These will appear as:
 
 ```execute
-echo "Hi there!"
+echo 'Hi there!'
 ```
 
 Where a command appears with the symbol <span class="fas fa-play-circle"></span> to the right side of the command, you do not need to type the command into the terminal yourself. Instead, click anywhere on the command and it will be run automatically in the terminal for you.
@@ -18,14 +18,14 @@ Usually the command will be run in the terminal at the top, but in some cases it
 
 Try clicking the command below and it should go the terminal at the bottom.
 
-```execute
-echo "And here!"
+```execute-2
+echo 'And here!'
 ```
 
 If at any time a glitch occurs and the workshop content doesn't display properly because of a network issue, and so an error is displayed, or it shows as a white page, select the dropdown hamburger menu top right in the banner above the terminals and select "Reload Workshop". That menu item will reload just the workshop content and leave you on the same page.
 
-**Do not use the ability of the browser to reload the whole browser page as you will loose where you were up to. Also do not use the "Restart Session" menu item unless specifically directed to.**
+**Do not use the ability of the browser to reload the whole browser page as you will loose where you were up to in the workshop content. Also do not use the "Restart Session" menu item unless specifically directed to as you will loose all your work.**
 
 Similarly, if the terminals stop working or show as closed, select "Reload Terminal" from the dropdown hamburger menu.
 
-If you have any issues which using the reload menu items don't solve, ask your workshop instructors.
+If you have any issues which using the reload menu items don't solve, ask the workshop instructor.

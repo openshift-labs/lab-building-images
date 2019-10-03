@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -x
+
+set -eo pipefail
+
+if [ -d /opt/app-root/etc/supervisor ]; then
+    exec supervisord --nodaemon
+else
+    exec warpdrive start
+fi

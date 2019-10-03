@@ -79,6 +79,10 @@ modules:
         name: Using Warpdrive
     python-server/11-bundled-deployer:
         name: Bundled Deployer
+    python-server/12-process-manager:
+        name: Process Manager
+    python-server/13-onbuild-images:
+        name: Onbuild Images
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

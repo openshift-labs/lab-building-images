@@ -43,4 +43,6 @@ modules:
     - python-server/09-production-server
     - python-server/10-using-warpdrive
     - python-server/11-bundled-deployer
+    - python-server/12-process-manager
+    - python-server/13-onbuild-images
     - workshop-summary

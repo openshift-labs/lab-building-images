@@ -42,7 +42,7 @@ modules:
     - python-server/08-zombie-reaping
     - python-server/09-production-server
     - python-server/10-using-warpdrive
-    - python-server/11-bundled-deployer
+    - python-server/11-bundling-scripts
     - python-server/12-process-manager
     - python-server/13-onbuild-images
     - workshop-summary

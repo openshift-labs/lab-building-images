@@ -77,8 +77,8 @@ modules:
         name: Production Server
     python-server/10-using-warpdrive:
         name: Using Warpdrive
-    python-server/11-bundled-deployer:
-        name: Bundled Deployer
+    python-server/11-bundling-scripts:
+        name: Bundling Scripts
     python-server/12-process-manager:
         name: Process Manager
     python-server/13-onbuild-images:

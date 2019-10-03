@@ -2,7 +2,8 @@ FROM fedora:31
 
 COPY fix-permissions /usr/bin/
 
-RUN dnf install -y --setopt=tsflags=nodocs findutils procps which && \
+RUN dnf install -y --setopt=tsflags=nodocs findutils procps which \
+      python3-pip && \
     dnf clean -y --enablerepo='*' all
 
 RUN useradd -u 1001 -g 0 -M -d /opt/app-root/src default && \

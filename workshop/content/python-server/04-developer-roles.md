@@ -24,7 +24,7 @@ View the contents of the directory:
 ls -lasR
 ```
 
-You will see that the structure has been changed with the application source code moved into the `src` sub directory. We have also created an `bin` directory. This contains an `assemble-image` script which includes the steps to build and install the application source code:
+You will see that the structure has been changed with the application source code moved into the `src` sub directory. We have also created a `bin` directory. This contains an `assemble-image` script which includes the steps to build and install the application source code:
 
 ```execute
 cat bin/assemble-image
@@ -35,6 +35,8 @@ and a `start-container` script which says how to start the application.
 ```execute
 cat bin/start-container
 ```
+
+Note that the `set -x` command you see in these scripts enables logging of each command run from the script. The `set -eo pipefail` command ensures that the script exits with an error as soon as any command fails. This ensures that a build fails on errors, or startup of the container fails, when there is any issue.
 
 View the contents of the `Dockerfile` by running:
 

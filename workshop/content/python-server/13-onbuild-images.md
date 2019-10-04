@@ -1,6 +1,6 @@
-If you are able to abstract out common build and deployment scripts into a base image and the application image `Dockerfile` instructions end up always being the same, you can simplify it even further again using what is an onbuild image.
+If you are able to abstract out common build and deployment scripts into a base image and the application image `Dockerfile` instructions end up always being the same, you can simplify it even further again using what is called an onbuild image.
 
-This is a special type of base image which includes a set of instructions in the `Dockerfile`, which instead of being executed when the base image is being build, are executed at the start of building any derived image which uses the base image.
+This is a special type of base image which includes a set of instructions in the `Dockerfile`, which instead of being executed when the base image is being built, are executed at the start of building any derived image which uses the base image.
 
 Change to the `~/python-onbuild-v1` sub directory:
 
@@ -88,4 +88,4 @@ Stop the container:
 podman kill -s TERM `podman ps -ql`
 ```
 
-Although the `ONBUILD` feature is interesting, that is not part of the OCI specification it may not be supported by container platforms that support building images for you. Only use it and become dependent on it if you know that your target platforms will support it.
+Although the `ONBUILD` feature is interesting, that it is not part of the OCI specification it may not be supported by container platforms that support building images for you. Only use it and become dependent on it if you know that your target platforms will support it.

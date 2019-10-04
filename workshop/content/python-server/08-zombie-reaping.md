@@ -26,7 +26,7 @@ In doing that though, it meant the responsibility to reap the zombie processes f
 
 For web servers which support multiple process, such as Apache/mod_wsgi, gunicorn and uWSGI, that they have to deal with the server processes stopping anyway, they will deal with the extra responsibility of reaping the zombie processes. If using a development server, or other single process web application, they may not. As such, it may be necessary to insert a process as process ID 1 which handles this, albeit that that process will also need to handle propagating signals to the managed process as well so it can be shutdown properly.
 
-This zombine process problem is described in more detail in the article [Docker and the pid 1 zombie reaping problem](https://blog.phusion.nl/2015/01/20/docker-and-the-pid-1-zombie-reaping-problem/).
+This zombie process problem is described in more detail in the article [Docker and the pid 1 zombie reaping problem](https://blog.phusion.nl/2015/01/20/docker-and-the-pid-1-zombie-reaping-problem/).
 
 A solution often touted for this is to use a mini init process such as `tini` or `dumbinit` to perform the roll of process ID 1. The alternative is a more heavy weight process manager such as `supervisor`.
 

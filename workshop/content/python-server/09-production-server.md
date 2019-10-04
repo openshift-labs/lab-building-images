@@ -66,7 +66,7 @@ exec mod_wsgi-express start-server $ARGS wsgi.py
 
 The `mod_wsgi-express start-server` command needs to be told to log to the terminal (`stdout`) and we override the port to listen on. Enabling of request logging is optional and that has also been set.
 
-Other configuration has been added to allow you to tune the server capacity through environment variables if necessary to better match the requirements of your specific WSGI application, and utilise any memory or CPU quota that may be applied to your container.
+Other configuration has been added to allow you to tune the server capacity through environment variables if necessary to better match the requirements of your specific WSGI application, and best utilise any memory or CPU quota that may be applied to your container.
 
 The `wsgi.py` file being used already had the WSGI application entry point callable called `application`. If it was a different name you can set the `--callable-object` option to `mod_wsgi-express`.
 

@@ -106,7 +106,7 @@ Here you will see that we have added at the end of the file:
 COPY --chown=1001:0 . /opt/app-root/
 
 RUN python3 -m venv /opt/app-root/venv && \
-    source /opt/app-root/venv/bin/activate && \
+    . /opt/app-root/venv/bin/activate && \
     pip3 install --no-cache-dir --upgrade pip setuptools wheel && \
     fix-permissions /opt/app-root
 ```

@@ -37,7 +37,7 @@ unset BASH_ENV PROMPT_COMMAND ENV
 
 STATUS=0 && whoami &> /dev/null || STATUS=$? && true
 
-if [[ "$STATUS" != "0" ]]; then
+if [ x"$STATUS" != x"0" ]; then
     echo "$(id -u):x:$(id -u):$(id -g)::`pwd`:/bin/bash" >> /etc/passwd
 fi
 
@@ -122,13 +122,18 @@ cat etc/profile.d/python.sh
 This contains:
 
 ```
-export PYTHONUNBUFFERED=1
-export PYTHONIOENCODING=UTF-8
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+PYTHONUNBUFFERED=1
+PYTHONIOENCODING=UTF-8
+LC_ALL=en_US.UTF-8
+LANG=en_US.UTF-8
+
+export PYTHONUNBUFFERED
+export PYTHONIOENCODING
+export LC_ALL
+export LANG
 
 if [ -f /opt/app-root/venv/bin/activate ]; then
-    source /opt/app-root/venv/bin/activate
+    . /opt/app-root/venv/bin/activate
 fi
 ```
 

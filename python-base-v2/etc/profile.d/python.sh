@@ -1,8 +1,13 @@
-export PYTHONUNBUFFERED=1
-export PYTHONIOENCODING=UTF-8
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+PYTHONUNBUFFERED=1
+PYTHONIOENCODING=UTF-8
+LC_ALL=en_US.UTF-8
+LANG=en_US.UTF-8
+
+export PYTHONUNBUFFERED
+export PYTHONIOENCODING
+export LC_ALL
+export LANG
 
 if [ -f /opt/app-root/venv/bin/activate ]; then
-    source /opt/app-root/venv/bin/activate
+    . /opt/app-root/venv/bin/activate
 fi

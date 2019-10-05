@@ -29,4 +29,4 @@ ENV BASH_ENV=/opt/app-root/etc/profile \
 
 ENTRYPOINT [ "container-entrypoint" ]
 
-CMD [ "/opt/app-root/etc/usage.sh" ]
+CMD [ "container-usage" ]

@@ -34,7 +34,7 @@ podman logs -f httpd
 
 Instead of the container ID, we use the `httpd` name we assigned to the container. The `-f` option says to tail the log files continually.
 
-Initially there will no log output, but make a web request against the web server by running:
+Initially there will be no log output, but make a web request against the web server by running:
 
 ```execute-2
 curl localhost

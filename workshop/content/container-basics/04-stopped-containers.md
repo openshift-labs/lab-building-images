@@ -17,7 +17,7 @@ When we ran the containers, we ran them in the foreground, with any output from 
 
 The output from the container was also captured to a log file. You can view the log file for a container, running or stopped, by running the `podman logs` command with the container ID as argument.
 
-```execute-2
+```execute
 podman logs `podman ps -ql`
 ```
 
@@ -27,7 +27,7 @@ Although there are some uses for a stopped container, they do consume space, so 
 
 To delete a single stopped container, you can use `podman rm` with the container ID as argument.
 
-```execute-2
+```execute
 podman rm `podman ps -ql`
 ```
 

@@ -41,16 +41,16 @@ CONTAINER ID  IMAGE                             COMMAND  CREATED        STATUS  
 
 To access an existing container from the container host and run a command within it, you can use the `podman exec` command. As with `podman run`, if running a command that requires an interactive terminal, use the `-it` options.
 
-When running `podman exec` you need to supply the ID of the container. You can capture the container ID for the last container started by running:
+When running `podman exec` you need to supply the ID of the container you want to access. To view the container ID for the very last container which was started you can run the command:
 
 ```execute-2
-CONTAINER_ID=`podman ps -ql`; echo $CONTAINER_ID
+podman ps -ql
 ```
 
-To create a second interactive terminal running in the existing container, now run:
+To create a second interactive terminal running in the existing container, you can run:
 
 ```execute-2
-podman exec -it $CONTAINER_ID sh
+podman exec -it `podman ps -ql` sh
 ```
 
 Run `ps` again in the original interactive terminal:

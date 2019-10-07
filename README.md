@@ -49,7 +49,7 @@ You can determine the hostname for the URL to access the workshop by running:
 oc get route lab-building-images
 ```
 
-When the URL for the workshop is accessed you will be prompted for a user name and password. Use your email address or some other unique identifier for the user name. This is only used to ensure you get a unique session and can attach to the same session from a different browser or computer if need be. The password you must supply is ``homeroom``.
+When the URL for the workshop is accessed you will be prompted for a user name and password. Use your email address or some other unique identifier for the user name. This is only used to ensure you get a unique session and can attach to the same session from a different browser or computer if need be. The password you must supply is ``containers``.
 
 Building the Workshop
 ---------------------

@@ -47,7 +47,7 @@ cat Dockerfile
 This now looks like:
 
 ```
-FROM python-base:latest
+FROM python-base:v1
 
 COPY --chown=1001:0 . /opt/app-root/
 

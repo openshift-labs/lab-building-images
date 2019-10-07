@@ -17,7 +17,7 @@ cat Dockerfile
 It should contain:
 
 ```
-FROM python-base:latest
+FROM python-base:v4
 
 ONBUILD COPY --chown=1001:0 . /opt/app-root/
 
@@ -33,7 +33,7 @@ These are the instructions we had in the `Dockerfile` for the Flask application,
 Build the base image. Note that when doing this we are supplying to `podman build` the `--format docker` option. This is because `ONBUILD` is not part of the OCI specification for portable container images, and instead is a feature of the original `docker` image format.
 
 ```execute
-podman build --format docker -t python-onbuild .
+podman build --format docker -t python-onbuild:v1 .
 ```
 
 These `ONBUILD` instructions will be recorded in the container image manifest, but no action is take at the time the base image is built.
@@ -53,7 +53,7 @@ cat Dockerfile
 All it contains is:
 
 ```
-FROM python-onbuild:latest
+FROM python-onbuild:v1
 ```
 
 Beyond specifying the base image, there are no additional instructions.

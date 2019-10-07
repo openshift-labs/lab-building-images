@@ -1,1 +1,1 @@
-FROM python-onbuild:latest
+FROM python-onbuild:v1

@@ -1,4 +1,4 @@
-FROM common-base:latest
+FROM common-base:v1
 
 USER root
 

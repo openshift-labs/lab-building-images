@@ -13,7 +13,7 @@ cd ~/common-base-v2
 Build the image:
 
 ```execute
-podman build -t common-base .
+podman build -t common-base:v2 .
 ```
 
 Change to the `~/python-base-v2` sub directory.

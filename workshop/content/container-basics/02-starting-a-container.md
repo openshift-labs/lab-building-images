@@ -2,7 +2,7 @@ To start an application inside of a container using `podman` or `docker`, you ne
 
 Prebuilt container images for applications, or a base container image upon which you may build your own container image, are distributed using image registries.
 
-The two main hosted image registry services that exist are [Docker Hub](https://https://hub.docker.com/) and [Quay.io](https://quay.io). Support for hosting and distributing container images is also available from Git repository hosting services such as [GitHub](http://github.com/) and [GitLab](https://gitlab.com/).
+The two main hosted image registry services that exist are [Docker Hub](https://hub.docker.com/) and [Quay.io](https://quay.io/). Support for hosting and distributing container images is also available from Git repository hosting services such as [GitHub](http://github.com/) and [GitLab](https://gitlab.com/).
 
 To pull down and run an existing container image from an image registry using `podman` run:
 

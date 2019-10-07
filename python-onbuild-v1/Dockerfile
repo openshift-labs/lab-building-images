@@ -1,4 +1,4 @@
-FROM python-base:latest
+FROM python-base:v4
 
 ONBUILD COPY --chown=1001:0 . /opt/app-root/
 

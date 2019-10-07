@@ -9,3 +9,11 @@ For further information on `podman` see:
 The workshop content itself can be found at:
 
 * https://github.com/openshift-labs/lab-building-images
+
+Information of `warpdrive` can be found at:
+
+* https://github.com/GrahamDumpleton/warpdrive/
+
+A complete example of a `warpdrive` enabled based image for deploying Python web applications can be found at:
+
+* https://github.com/getwarped/warpdrive-image

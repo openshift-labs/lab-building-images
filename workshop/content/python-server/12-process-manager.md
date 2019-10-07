@@ -22,7 +22,7 @@ It should contain:
 #!/bin/bash
 
 if [ -d /opt/app-root/etc/supervisor ]; then
-    exec supervisord --nodaemon
+    exec supervisord --configuration /opt/app-root/etc/supervisord.conf --nodaemon
 else
     exec warpdrive start
 fi
@@ -96,19 +96,19 @@ podman exec -it `podman ps -ql` bash
 In the container, run `supervisorctl status` to check the state of any managed applications.
 
 ```execute-2
-supervisorctl status
+supervisorctl --configuration /opt/app-root/etc/supervisord.conf status
 ```
 
 You can even restart the application without the container being shutdown. This is because it is `supervisord` which is running as process ID 1, and it will keep running.
 
 ```execute-2
-supervisorctl restart wsgi
+supervisorctl --configuration /opt/app-root/etc/supervisord.conf restart wsgi
 ```
 
 If you really wanted to, you could still shutdown the whole container by running:
 
 ```execute-2
-supervisorctl shutdown
+supervisorctl --configuration /opt/app-root/etc/supervisord.conf shutdown
 ```
 
 This will cause the managed applications to be stopped, then `supervisord` will be shutdown, and thus the container.

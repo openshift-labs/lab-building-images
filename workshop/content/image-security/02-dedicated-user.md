@@ -19,7 +19,7 @@ cat Dockerfile
 This time you should see:
 
 ```
-FROM fedora:31
+FROM fedora:30
 
 RUN dnf install -y --setopt=tsflags=nodocs procps which && \
     dnf clean -y --enablerepo='*' all

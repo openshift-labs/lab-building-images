@@ -4,8 +4,7 @@ USER root
 
 RUN HOME=/root && \
     dnf install -y --setopt=tsflags=nodocs glibc-langpack-en \
-      redhat-rpm-config gcc python3-devel python3-pip httpd-devel \
-      supervisor && \
+      redhat-rpm-config gcc python3-devel python3-pip httpd-devel && \
     dnf clean -y --enablerepo='*' all
 
 ENV PYTHONUNBUFFERED=1 \
@@ -20,4 +19,5 @@ COPY --chown=1001:0 . /opt/app-root/
 RUN python3 -m venv /opt/app-root/venv && \
     . /opt/app-root/venv/bin/activate && \
     pip3 install --no-cache-dir --upgrade pip setuptools wheel && \
+    pip3 install --no-cache-dir supervisor==4.0.4 && \
     fix-permissions /opt/app-root

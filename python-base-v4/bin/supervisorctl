@@ -1,3 +1,0 @@
-#!/bin/bash
-
-exec /usr/bin/supervisorctl --configuration /opt/app-root/etc/supervisord.conf "$@"

@@ -1,4 +1,4 @@
-For the application image we inherited from the `fedora:31` base image. You are not limited to deriving direct from an operating system base image. You can create your own intermediate base image. This will derive from the operating system base image, but add extra functionality you need which is common to many applications. Your application then derives from this image.
+For the application image we inherited from the `fedora:30` base image. You are not limited to deriving direct from an operating system base image. You can create your own intermediate base image. This will derive from the operating system base image, but add extra functionality you need which is common to many applications. Your application then derives from this image.
 
 What we will do first is create an intermediate image which encapsulates what was required to add the dedicated user and lock down access to the `root` user.
 

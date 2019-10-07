@@ -33,7 +33,7 @@ In other words, if the directory `/opt/app-root/etc/supervisor` exists, it is as
 Build this base image:
 
 ```execute
-podman build --no-cache -t python-base .
+podman build --no-cache -t python-base:v4 .
 ```
 
 Now change to the `~/flask-app-v8` sub directory.

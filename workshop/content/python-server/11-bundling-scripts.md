@@ -19,7 +19,7 @@ These are the same scripts as we used in the last version of the Flask applicati
 Build the base image.
 
 ```execute
-podman build --no-cache -t python-base .
+podman build --no-cache -t python-base:v3 .
 ```
 
 Change to the `~/flask-app-v7` sub directory:

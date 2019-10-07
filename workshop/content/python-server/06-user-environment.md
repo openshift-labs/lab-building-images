@@ -25,7 +25,7 @@ cd ~/python-base-v2
 We have made some changes here as well so rebuild it:
 
 ```execute
-podman build --no-cache -t python-base .
+podman build --no-cache -t python-base:v2 .
 ```
 
 Finally change to the `~/flask-app-v3` sub directory:

@@ -12,6 +12,10 @@ mv workshop /opt/app-root/workshop
 
 mv scripts/* /opt/app-root/bin/
 
+# Fix up timestamps on versioned build directories.
+
+# ./fix-timestamps
+
 # Delete all non required files from the image
 
 rm -rf Dockerfile README.md LICENSE

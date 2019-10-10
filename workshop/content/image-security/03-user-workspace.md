@@ -20,7 +20,7 @@ USER 1001
 
 All `RUN` instructions after this point in the `Dockerfile`, if there were any, would be run as this user ID. Because it is the last time `USER` is specified, it also defines the user ID that the container started from the container image will run as.
 
-Note that we have used an integer user ID here rather than the user name. This is done so that a container platform the image is being deployed to, or other tooling, can validate what actual user ID the container would run as.
+Note that we have used an integer user ID here rather than the user name. This is so that a container platform the image is being deployed to, or other tooling, can validate what actual user ID the container would run as.
 
 If we had set `USER` to the user name `default` it can't be determined what actual user ID the container would run as, as the `/etc/passwd` file could have been modified to map the user `default` to the `root` user ID of 0.
 

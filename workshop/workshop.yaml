@@ -13,7 +13,7 @@ modules:
     - creating-images/02-building-an-image
     - creating-images/03-container-to-image
     - creating-images/04-inspecting-layers
-    - creating-images/05-save-and-load
+    # - creating-images/05-save-and-load
     - creating-images/06-using-a-dockerfile
     - creating-images/07-choosing-a-base
     - creating-images/08-system-packages

@@ -4,7 +4,11 @@ In this case each distinct namespace in the Kubernetes cluster is allocated a di
 
 The forced use of different user IDs for applications deployed in each namespace is to provide an extra layer of security between applications of distinct users. By running with an assigned user ID different to other namespaces, if a way was found of escaping the container runtime, you would be neither the `root` user, nor a user ID the same as applications running in different namespaces. This limits even further the extent of damage that could be done in the case of a compromise.
 
-To simulate this type of deployment environment, you can run the container image with an arbitrary user ID which doesn't have a matching user in the `/etc/passwd` file of the container image.
+Handling this additional level of security complicates the steps required to setup the container image. If you are coming to this workshop as a beginner in working with containers and building container images, the topic of how to design a container image to deal with this is going to be too in depth. As such, if you are a beginner, or don't specifically need to work with such container platforms, you can if you want skip ahead to the next major section of the workshop.
+
+If you are going to skip ahead, click on the link here to jump to the section on [building container images for Python](../python-server/01-basic-application).
+
+If you are staying and are happy to go in more depth on this topic, to simulate this type of deployment environment, you can run the container image with an arbitrary user ID which doesn't have a matching user in the `/etc/passwd` file of the container image.
 
 ```execute
 podman run --rm -u 1000000 greeting id

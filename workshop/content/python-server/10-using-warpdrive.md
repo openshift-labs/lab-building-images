@@ -2,7 +2,9 @@ By using an `assemble-image` and `start-container` script we have attempted to b
 
 A big question is whether we can start to encapsulate some of this variation for different application types and web servers in a generic set of `assemble-image` and `start-container` scripts, where hook scripts can be supplied as necessary to handle any variations still required for certain circumstances.
 
-A system which attempts to do just this is the `warpdrive` module. To see how this module can be used, change to the `~/flask-app-v6` sub directory.
+A system which helps in achieving this goal of being able to abstract out the steps for building and deploying Python web applications is the `warpdrive` package.
+
+To see what the package `warpdrive` can do, change to the `~/flask-app-v6` sub directory.
 
 ```execute
 cd ~/flask-app-v6
@@ -100,7 +102,7 @@ cat src/requirements.txt
 
 If instead of a `wsgi.py` file an `app.py` file were supplied, rather than run a WSGI server, `warpdrive` will run it as `python app.py`. If the `app.py` need to be run with special options, or you wanted to take complete control of starting the application, you could instead supply an `app.sh` file and it would be run.
 
-If you are instead using a web framework like Django, `warpdrive` will even detect that, will still use the production grade WSGI server you choose, but will also ensure that it is automatically setup to also host static media assets. Hosting of static media assets will be handled using the web server if it supports it, or by injecting the WhiteNoise middleware into the application to handle it if necessary.
+If you are using a web framework like Django, `warpdrive` will even detect that, will still use the production grade WSGI server you choose, but will also ensure that it is automatically setup to host static media assets. Hosting of static media assets will be handled using the web server if it supports it, or by injecting the WhiteNoise middleware into the application to handle it if necessary.
 
 In all cases, `warpdrive` will if the web server or application requires it, run it in a way that reaping of zombie processes is handled.
 

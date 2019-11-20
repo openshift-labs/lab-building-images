@@ -1,5 +1,5 @@
 WORKSHOP_NAME=lab-building-images
-WORKSHOP_IMAGE=quay.io/openshiftlabs/lab-building-images:1.10
+WORKSHOP_IMAGE=quay.io/openshiftlabs/lab-building-images:1.11
 WORKSHOP_TITLE="Building Container Images"
 WORKSHOP_DESCRIPTION="A workshop on best practices for building container images"
 SPAWNER_PASSWORD=containers
